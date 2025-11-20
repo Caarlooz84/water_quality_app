@@ -1,0 +1,12 @@
+import turtle
+
+# Create a turtle
+pen = turtle.Turtle()
+
+# Draw a square
+for _ in range(4):
+    pen.forward(100)   # Move forward 100 pixels
+    pen.left(90)       # Turn left 90 degrees
+
+# Keep the window open
+turtle.done()
