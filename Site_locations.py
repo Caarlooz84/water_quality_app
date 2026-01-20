@@ -1,14 +1,12 @@
-
-
-
-
 import streamlit as st
 import folium
 from streamlit_folium import st_folium
 
 st.title("Water Features")
 
-site = st.text_input("Enter site name")
+#site = st.text_input("Enter site name")
+
+site = st.selectbox("Choose a site:", ["River View", "Winding Creek", "Steele Creek", "Redbird", "Alamo Ranch", "Creekside"])
 
 if site == "River View":
     m = folium.Map(location=[30.632489, -97.735146], zoom_start=12)
