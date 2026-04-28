@@ -1593,7 +1593,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "San Gabriel":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("San Gabriel")
             st.image(f"san_gabriel.png", caption="San Gabriel", use_container_width=True)
@@ -1601,49 +1601,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            # st.markdown("### Treatment")
-            # st.checkbox("100 lbs copper sulfate (broadcast)") #Filamentous Algae control
-            # st.checkbox("2 jugs of argos (spray)") #Filamentous Algae when bloom
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
+                st.image("bushy_pondweed.png", use_container_width=True)
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
+                st.image("cat_tail.png", use_container_width=True)
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
+                st.image("arrow_head.png", use_container_width=True)
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.image("prim_rose_plant.png", use_container_width=True)
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
+                st.image("lily.png", use_container_width=True)
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
+                st.image("alligator_weed.png", use_container_width=True)
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
+                st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
                 st.write("Argos - Spray")
-            if vegetation == "Bushy Pondweed":
-                st.image("bushy_pondweed.png", use_container_width=True)
+            elif vegetation == "Bushy Pondweed":
                 st.markdown("### Treatment")
                 st.write("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
+            elif vegetation == "Cattail":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
                 st.markdown("### Treatment")
-                st.write("Aquamaster - spray")
-                # st.write("### Routine Treatment")
-                # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
                 st.markdown("### Treatment")
-                st.write("Aquathol K - spray")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("50 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
+            st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
             st.write("Red Berry Pass, Georgetown, Texas 78628")
             m = folium.Map(location=[30.6239602, -97.7695834], zoom_start=12)
@@ -1732,7 +1754,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Camden Shadow Brooke":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Camden Shadow Brooke")
             st.image(f"cammden.png", caption="Camden Shadow Brooke", use_container_width=True)
@@ -1741,49 +1763,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            # st.markdown("### Treatment")
-            # st.checkbox("100 lbs copper sulfate (broadcast)") #Filamentous Algae control
-            # st.checkbox("2 jugs of argos (spray)") #Filamentous Algae when bloom
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
+                st.image("bushy_pondweed.png", use_container_width=True)
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
+                st.image("cat_tail.png", use_container_width=True)
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
+                st.image("arrow_head.png", use_container_width=True)
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.image("prim_rose_plant.png", use_container_width=True)
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
+                st.image("lily.png", use_container_width=True)
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
+                st.image("alligator_weed.png", use_container_width=True)
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
+                st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
                 st.write("Argos - Spray")
-            if vegetation == "Bushy Pondweed":
-                st.image("bushy_pondweed.png", use_container_width=True)
+            elif vegetation == "Bushy Pondweed":
                 st.markdown("### Treatment")
                 st.write("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
+            elif vegetation == "Cattail":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
                 st.markdown("### Treatment")
-                st.write("Aquamaster - spray")
-                # st.write("### Routine Treatment")
-                # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
                 st.markdown("### Treatment")
-                st.write("Aquathol K - spray")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("30 lbs. Cutrine Plus")
+            st.write("30 lbs (whole bag) Cutrine Gran Plus")
         elif page == "Map":
             st.write("Camden Shadow Brook Apartments, Austin, Texas 78748")
             m = folium.Map(location=[30.1724075, -97.8035975], zoom_start=12)
@@ -1872,7 +1916,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Easton Park":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Easton Park")
             st.image(f"easton_park.png", caption="Falcon Pointe", use_container_width=True)
@@ -1881,48 +1925,71 @@ elif side == "Lake":
             st.checkbox("Fountain inspection and testing")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
+            st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
             m = folium.Map(location=[30.157468, -97.717157], zoom_start=12)
             folium.Marker(location=[30.157468, -97.717157], popup="Easton Park",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
@@ -2002,7 +2069,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Wilder":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Blanco Vista")
             st.image(f"wilder.png", caption="Wilder", use_container_width=True)
@@ -2010,50 +2077,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("50 lbs of copper sulfate (broadcast using boat) to control filamentous algae")
+            st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
             st.write("Near 10530 Waterfowl, Adkins, TX 78101")
             m = folium.Map(location=[29.4339995, -98.2781728], zoom_start=12)
@@ -2143,7 +2231,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Blanco Vista":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Blanco Vista")
             st.image(f"blanco_vista.png", caption="Blanco Vista", use_container_width=True)
@@ -2153,50 +2241,71 @@ elif side == "Lake":
             st.checkbox("Check for Well Reading")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("100 lbs of copper sulfate (broadcast using boat) to control filamentous algae")
+            st.write("100 lbs copper sulfate")
         elif page == "Map":
             st.write("413 Lacey Oak Lp, San Marcos, TX")
             m = folium.Map(location=[29.940703, -97.894674], zoom_start=12)
@@ -2586,7 +2695,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Lakeside Crossing":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Lakeside Crossing")
             st.image(f"lakeside_crossing.png", caption="Lakeside Crossing", use_container_width=True)
@@ -2595,48 +2704,71 @@ elif side == "Lake":
             st.checkbox("Fountain inspection and testing")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("50 lbs of copper sulfate")
+            st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
             st.write("229 Fountain Grove Dr, Kyle, TX")
             m = folium.Map(location=[30.016148, -97.844254], zoom_start=12)
@@ -2717,7 +2849,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Valley Ranch":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Valley Ranch")
             st.image(f"valley_ranch.png", caption="Valley Ranch", use_container_width=True)
@@ -2726,48 +2858,71 @@ elif side == "Lake":
             st.checkbox("Fountain inspection and testing")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("50 lbs of copper sulfate")
+            st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
             st.write("13639 Valley Lk, San Antonio, TX")
             m = folium.Map(location=[29.519325, -98.765837], zoom_start=12)
@@ -2839,7 +2994,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Red Bird Ranch":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
                 st.subheader("Red Bird Ranch")
                 st.image(f"red_bird_ranch.png", caption="Red Bird Ranch", use_container_width=True)
@@ -2847,49 +3002,71 @@ elif side == "Lake":
                 st.checkbox("Treat")
                 st.checkbox("Pick up trash")
                 st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-                    # st.markdown("### Treatment")
-                    # st.checkbox("100 lbs copper sulfate (broadcast)") #Filamentous Algae control
-                    # st.checkbox("2 jugs of argos (spray)") #Filamentous Algae when bloom
-                vegetation = st.selectbox("Choose vegetation type:",
-                                              ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                               "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-                if vegetation == "Filamentous Algae":
-                    st.image("filamentous_algae.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Argos - Spray")
-                if vegetation == "Bushy Pondweed":
-                    st.image("bushy_pondweed.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Current - Spray")
-                if vegetation == "Cattail":
-                    st.image("cat_tail.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Phase & Aquaneat - spray")
-                if vegetation == "Arrowhead":
-                    st.image("arrow_head.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Phase & Aquaneat - spray")
-                if vegetation == "Primrose":
-                    st.image("prim_rose_plant.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Phase & Aquaneat - spray")
-                if vegetation == "Lily":
-                    st.image("lily.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Phase & Aquaneat - spray")
-                if vegetation == "Alligator Weed":
-                    st.image("alligator_weed.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Aquamaster - spray")
-                        # st.write("### Routine Treatment")
-                        # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-                if vegetation == "American Pondweed":
-                    st.image("american_weed.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Aquathol K - spray")
-                st.write("### Algae Control Treatment")
-                st.write("150 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
+                st.image("filamentous_algae.png", use_container_width=True)
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
+                st.image("bushy_pondweed.png", use_container_width=True)
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
+                st.image("cat_tail.png", use_container_width=True)
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
+                st.image("arrow_head.png", use_container_width=True)
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.image("prim_rose_plant.png", use_container_width=True)
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
+                st.image("lily.png", use_container_width=True)
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
+                st.image("alligator_weed.png", use_container_width=True)
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
+                st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
+                st.markdown("### Treatment")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
+            st.write("### Algae Control Treatment")
+            st.write("100 lbs copper sulfate")
         elif page == "Map":
                 st.write("163 Garden Emerald, San Antonio, Texas 78253")
                 m = folium.Map(location=[29.4387324, -98.8065347], zoom_start=12)
@@ -2979,7 +3156,7 @@ elif side == "Lake":
                     st.write(final_report)
 
     if site == "Hunters Pond":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Hunters Pond")
             st.image(f"hunters_pond.png", caption="Hunters Pond", use_container_width=True)
@@ -2987,48 +3164,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("100 lbs of copper sulfate")
+            st.write("50 lbs copper sulfate")
         elif page == "Map":
             st.write("9942 Hunters Pond, San Antonio, TX")
             m = folium.Map(location=[29.317733, -98.543061], zoom_start=12)
@@ -3090,7 +3290,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "DR Horton":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("DR Horton")
             st.image(f"drr_horton.png", caption="DR Horton", use_container_width=True)
@@ -3100,48 +3300,71 @@ elif side == "Lake":
             st.checkbox("Get Well Reading")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("50 lbs of copper sulfate")
+            st.write("50 lbs copper sulfate")
         elif page == "Map":
             st.write("Near D.R. Horton San Antonio Division Office, San Antonio, TX")
             m = folium.Map(location=[29.603528, -98.382056], zoom_start=12)
@@ -3203,7 +3426,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Rhine Valley":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Rhine Valley")
             st.image(f"rhine_valley.png", caption="Rhine Valley", use_container_width=True)
@@ -3211,48 +3434,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Argo (spray) - Filamentous Algae when bloom")
-                st.write("Aquathol K - broadcast")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
+                st.image("cat_tail.png", use_container_width=True)
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
+                st.image("arrow_head.png", use_container_width=True)
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.image("prim_rose_plant.png", use_container_width=True)
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
+                st.image("lily.png", use_container_width=True)
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
+                st.image("alligator_weed.png", use_container_width=True)
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
+                st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
+                st.markdown("### Treatment")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
                 st.markdown("### Treatment")
                 st.write("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
+            elif vegetation == "Cattail":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
                 st.markdown("### Treatment")
-                st.write("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
                 st.markdown("### Treatment")
-                st.write("Aquathol K")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("100 lbs of copper sulfate")
+            st.write("100 lbs copper sulfate")
         elif page == "Map":
             st.write("9984 Sarrebourg Street, Schertz, TX")
             m = folium.Map(location=[29.5269856, -98.2348819], zoom_start=12)
@@ -3312,6 +3558,7 @@ elif side == "Lake":
             if report:
                 final_report = " ".join(report)
                 st.write(final_report)
+
     if site == "Whisper Falls":
         page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
@@ -3476,6 +3723,7 @@ elif side == "Lake":
             if report:
                 final_report = " ".join(report)
                 st.write(final_report)
+
     if site == "Sundance Crossing":
         page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
@@ -3639,7 +3887,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Woods of Alon":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Woods of Alon")
             st.image(f"woods_alon.png", caption="Woods of Alon", use_container_width=True)
@@ -3648,49 +3896,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            # st.markdown("### Treatment")
-            # st.checkbox("100 lbs copper sulfate (broadcast)") #Filamentous Algae control
-            # st.checkbox("2 jugs of argos (spray)") #Filamentous Algae when bloom
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
+                st.image("bushy_pondweed.png", use_container_width=True)
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
+                st.image("cat_tail.png", use_container_width=True)
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
+                st.image("arrow_head.png", use_container_width=True)
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.image("prim_rose_plant.png", use_container_width=True)
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
+                st.image("lily.png", use_container_width=True)
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
+                st.image("alligator_weed.png", use_container_width=True)
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
+                st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
                 st.write("Argos - Spray")
-            if vegetation == "Bushy Pondweed":
-                st.image("bushy_pondweed.png", use_container_width=True)
+            elif vegetation == "Bushy Pondweed":
                 st.markdown("### Treatment")
                 st.write("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
+            elif vegetation == "Cattail":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
                 st.markdown("### Treatment")
-                st.write("Aquamaster - spray")
-                # st.write("### Routine Treatment")
-                # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
                 st.markdown("### Treatment")
-                st.write("Aquathol K - spray")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("60 lbs Cutrine Plus")
+            st.write("60 lbs Cutrine Gran Plus")
         elif page == "Map":
             st.write("2906 Zurich, San Antonio, Texas 78230")
             m = folium.Map(location=[29.549143, -98.534438], zoom_start=12)
@@ -3780,7 +4050,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Cowboy Cabin":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Cowboy Cabin")
             st.image(f"cowboy_cabin.png", caption="Cowboy Cabin", use_container_width=True)
@@ -3791,48 +4061,71 @@ elif side == "Lake":
             #st.checkbox("Do any specific task for today")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Argo (spray) - Filamentous Algae when bloom")
-                st.write("Aquathol K - broadcast")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
+                st.image("cat_tail.png", use_container_width=True)
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
+                st.image("arrow_head.png", use_container_width=True)
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.image("prim_rose_plant.png", use_container_width=True)
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
+                st.image("lily.png", use_container_width=True)
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
+                st.image("alligator_weed.png", use_container_width=True)
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
+                st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
+                st.markdown("### Treatment")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
                 st.markdown("### Treatment")
                 st.write("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
+            elif vegetation == "Cattail":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
                 st.markdown("### Treatment")
-                st.write("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
                 st.markdown("### Treatment")
-                st.write("Aquathol K")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("30 lbs of Cutrine Plus")
+            st.write("30 lbs Cutrine Gran Plus")
         elif page == "Map":
             st.write("10281 FM 20, Lockhart, TX")
             m = folium.Map(location=[29.786919, -97.734721], zoom_start=12)
@@ -3894,7 +4187,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "The Willows HOA":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("The Willows HOA")
             st.image(f"willows_hoa.png", caption="The Willows HOA", use_container_width=True)
@@ -3902,48 +4195,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("100 lbs of copper sulfate")
+            st.write("100 lbs copper sulfate")
         elif page == "Map":
             st.write("4985 Lakeshore Dr, Killeen, TX")
             m = folium.Map(location=[31.086025, -97.680181], zoom_start=12)
@@ -4005,7 +4321,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "River Bend":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("River Bend")
             st.image(f"river_bend.png", caption="River Bend", use_container_width=True)
@@ -4013,48 +4329,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("30 lbs of Cutrine Plus")
+            st.write("30 lbs copper sulfate")
         elif page == "Map":
             st.write("105 Whitewing Way, Floresville, TX")
             m = folium.Map(location=[29.156680, -98.182802], zoom_start=12)
@@ -4116,7 +4455,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Preserve":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Preserve")
             st.image(f"preserve.png", caption="Preserve", use_container_width=True)
@@ -4125,48 +4464,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
+            st.write("### Algae Control Treatment")
+            st.write("50 lbs copper sulfate")
         elif page == "Map":
             st.write("Near New Braunfels, TX 78132")
             m = folium.Map(location=[29.7099256, -98.1997875], zoom_start=12)
@@ -4228,7 +4590,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Wasser Ranch":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Wasser Ranch")
             st.image(f"wasser_ranch.png", caption="Wasser Ranch", use_container_width=True)
@@ -4238,48 +4600,71 @@ elif side == "Lake":
             st.checkbox("Pick up trash")
             st.checkbox("Well Reading")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("50 lbs. Copper Sulfate")
+            st.write("50 lbs copper sulfate")
         elif page == "Map":
             st.subheader("Wasser Ranch")
             st.write("630 Pader, New Braunfels, Texas 78130")
@@ -4367,7 +4752,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "The Reserve at Lake Travis":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("The Reserve at Lake Travis")
             st.image(f"lake_travis.png", caption="The Reserve at Lake Travis", use_container_width=True)
@@ -4376,48 +4761,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("30 lbs. Cutrine Plus")
+            st.write("30 lbs Cutrine Gran Plus")
         elif page == "Map":
             st.subheader("The Reserve at Lake Travis")
             st.write("The Reserve At Lake Travis, Briarcliff, TX 78669")
@@ -4505,7 +4913,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Crystal Village":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Crystal Village")
             st.image(f"crystal_village.png", caption="Crystal Village", use_container_width=True)
@@ -4513,48 +4921,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("30 lbs. Cutrine Plus")
+            st.write("30 lbs Cutrine Gran Plus")
         elif page == "Map":
             st.subheader("Crystal Village")
             st.write("Near 2051 Raider Way, Leander, Texas 78641")
@@ -4649,7 +5080,7 @@ elif side == "Lake":
         st_folium(m)
 
     if site == "Willow's Creek":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Willow's Creek")
             st.image(f"willow_creek.png", caption="Willow's Creek", use_container_width=True)
@@ -4657,48 +5088,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("30 lbs of Cutrine Plus")
+            st.write("30 lbs Cutrine Gran Plus")
         elif page == "Map":
             st.write("105 Whitewing Way, Floresville, TX")
             m = folium.Map(location=[29.860380, -97.972922], zoom_start=12)
@@ -4887,7 +5341,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "South Grove Condominiums":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("South Grove Condominiums")
             st.image(f"south_grove.png", caption="South Grove Condominiums", use_container_width=True)
@@ -4896,46 +5350,68 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
             st.write("320 Promenade Ct, Austin, TX 78652")
             m = folium.Map(location=[30.1387111, -97.8047448], zoom_start=12)
@@ -4997,7 +5473,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Austin East Parke HOA":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Austin East Parke HOA")
             st.image(f"austin_eastparke.png", caption="Austin East Parke HOA", use_container_width=True)
@@ -5006,46 +5482,68 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
             st.write("5504 Coolbrook Dr, Austin, TX 78724")
             m = folium.Map(location=[30.3058572, -97.6581587], zoom_start=12)
@@ -5107,7 +5605,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Alta Vista":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.header("Alta Vista")
             st.subheader("Pond 1")
@@ -5138,48 +5636,68 @@ elif side == "Lake":
             st.checkbox("Pick up trash", key="pickup_trash_4")
             st.checkbox("Mow", key="mow_4")
             st.checkbox("Do any specific task for today", key="specific_task_4")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
             st.subheader("Pond 1")
             st.write("298 Sebastians Run, Lakeway, TX 78738")
@@ -5252,7 +5770,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Edgewick HOA":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Edgewick HOA (3)")
             st.image(f"edgewick_hoa.png", caption="Edgewick HOA", use_container_width=True)
@@ -5261,46 +5779,68 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
             st.write("2633 Witsome Loop, Austin, TX 78741")
             m = folium.Map(location=[30.2273486, -97.7387500], zoom_start=12)
@@ -5362,7 +5902,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Hidden Oaks at Berry Springs":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.header("Hidden Oaks at Berry Springs")
             st.subheader("Site 1")
@@ -5388,48 +5928,68 @@ elif side == "Lake":
             st.checkbox("Pick up trash", key="pickup_trash_3")
             st.checkbox("Mow", key="mow_3")
             st.checkbox("Do any specific task for today", key="specific_task_3")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
             st.subheader("Site 1")
             st.write("116 Fairway Ln, Georgetown, TX 78628")
@@ -5497,7 +6057,7 @@ elif side == "Lake":
                 st.write(final_report)
 
         if site == "Alta Vista":
-            page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+            page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
             if page == "Tasks":
                 st.header("Alta Vista")
                 st.subheader("Pond 1")
@@ -5528,48 +6088,68 @@ elif side == "Lake":
                 st.checkbox("Pick up trash", key="pickup_trash_4")
                 st.checkbox("Mow", key="mow_4")
                 st.checkbox("Do any specific task for today", key="specific_task_4")
-            elif page == "Treatment":
-                #    st.write("### Routine Treatment")
-                #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-                vegetation = st.selectbox("Choose vegetation type:",
-                                          ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                           "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-                #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-                if vegetation == "Filamentous Algae":
+            elif page == "Plant ID & Treatment":
+                vegetation = None
+                col1, col2, col3, col4 = st.columns(4)
+                with col1:
                     st.image("filamentous_algae.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.checkbox("Argo - Spray")
-                    st.checkbox("Aquathol K - spray")
-                if vegetation == "Bushy Pondweed":
+                    if st.button("Filamentous Algae"):
+                        vegetation = "Filamentous Algae"
+                with col2:
                     st.image("bushy_pondweed.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.checkbox("Current - Spray")
-                if vegetation == "Cattail":
+                    if st.button("Bushy Pondweed"):
+                        vegetation = "Bushy Pondweed"
+                with col3:
                     st.image("cat_tail.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.checkbox("Phase & Aquaneat - spray")
-                if vegetation == "Arrowhead":
+                    if st.button("Cattail"):
+                        vegetation = "Cattail"
+                with col4:
                     st.image("arrow_head.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.checkbox("Phase & Aquaneat - spray")
-                if vegetation == "Primrose":
+                    if st.button("Arrowhead"):
+                        vegetation = "Arrowhead"
+                # Row 2
+                col5, col6, col7, col8 = st.columns(4)
+                with col5:
                     st.image("prim_rose_plant.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.checkbox("Phase & Aquaneat - spray")
-                if vegetation == "Lily":
+                    if st.button("Primrose"):
+                        vegetation = "Primrose"
+                with col6:
                     st.image("lily.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.checkbox("Phase & Aquaneat - spray")
-                if vegetation == "Alligator Weed":
+                    if st.button("Lily"):
+                        vegetation = "Lily"
+                with col7:
                     st.image("alligator_weed.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.checkbox("Aquamaster - spray")
-                # st.write("### Routine Treatment")
-                # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-                if vegetation == "American Pondweed":
+                    if st.button("Alligator Weed"):
+                        vegetation = "Alligator Weed"
+                with col8:
                     st.image("american_weed.png", use_container_width=True)
+                    if st.button("American Pondweed"):
+                        vegetation = "American Pondweed"
+
+                if vegetation == "Filamentous Algae":
                     st.markdown("### Treatment")
-                    st.checkbox("Aquathol K")
+                    st.write("Argos - Spray")
+                elif vegetation == "Bushy Pondweed":
+                    st.markdown("### Treatment")
+                    st.write("Current - Spray")
+                elif vegetation == "Cattail":
+                    st.markdown("### Treatment")
+                    st.write("Aquaneat - Spray")
+                elif vegetation == "Arrowhead":
+                    st.markdown("### Treatment")
+                    st.write("Aquaneat - Spray")
+                elif vegetation == "Primrose":
+                    st.markdown("### Treatment")
+                    st.write("Aquaneat - Spray")
+                elif vegetation == "Lily":
+                    st.markdown("### Treatment")
+                    st.write("Aquaneat - Spray")
+                elif vegetation == "Alligator Weed":
+                    st.markdown("### Treatment")
+                    st.write("Aquamaster - Spray")
+                elif vegetation == "American Pondweed":
+                    st.markdown("### Treatment")
+                    st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
             elif page == "Map":
                 st.subheader("Pond 1")
                 st.write("298 Sebastians Run, Lakeway, TX 78738")
