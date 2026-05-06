@@ -1018,89 +1018,14 @@ elif side == "Lake":
 
             st.write("### Algae Control Treatment")
             st.write("50 lbs (whole bag) copper sulfate")
-            st.subheader("Central Park")
-            st.image(f"Falcon_Pointe.png", caption="Central Park", use_container_width=True)
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
-                st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argos - Spray")
-            if vegetation == "Bushy Pondweed":
-                st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-                # st.write("### Routine Treatment")
-                # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquathol K - spray")
-            st.subheader("Prim Rose")
-            st.image(f"Prim_Rose.png", caption="Prim Rose", use_container_width=True)
-            st.write("### Algae Control Treatment")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"], key = "vegetation_type_2")
-            if vegetation == "Filamentous Algae":
-                st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argos - Spray")
-            if vegetation == "Bushy Pondweed":
-                st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-                # st.write("### Routine Treatment")
-                # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquathol K - spray")
-            st.write("50 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
+
         elif page == "Map":
             m = folium.Map(location=[30.46, -97.58], zoom_start=12)
             folium.TileLayer("Esri.WorldImagery").add_to(m)
 
-            folium.Marker([30.4717253, -97.5894210], popup="Secluded Willows", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            folium.Marker([30.4573293, -97.5840429], popup="Central Park",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            folium.Marker([30.4517623, -97.5886834], popup="Prim Rose", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.4717253, -97.5894210], popup="Secluded Willows - Near 1802 Secluded Willow Cove, Pflugerville, Tx 78660", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.4573293, -97.5840429], popup="Central Park - 18608 Falcon Pointe Blvd, Pflugerville, TX 78660",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.4517623, -97.5886834], popup="Prim Rose - 17900 Ruby Lace Rd, Pflugerville, TX 78660", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
 
             folium.LayerControl().add_to(m)
             st_folium(m)
@@ -1322,32 +1247,44 @@ elif side == "Lake":
             #st.write("### Algae Control Treatment")
             #st.write("50 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
         elif page == "Map":
-            st.write("1136 Loganberry Dr, Georgetown, Texas 78626")
-            m = folium.Map(location=[30.6647654, -97.6450196], zoom_start=12)
-            folium.Marker(location=[30.6647654, -97.6450196], popup="Berry Springs",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            st.subheader("Berry Springs")
+            #m = folium.Map(location=[30.6647654, -97.6450196], zoom_start=12)
+            #folium.Marker(location=[30.6647654, -97.6450196], popup="Berry Springs",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            m = folium.Map(location=[30.66, -97.65], zoom_start=12)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.6647654, -97.6450196], popup="1136 Loganberry Dr, Georgetown, Texas 78626", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
-
             # sump_clean = st.checkbox("Sump Cleaning")
-            Starter = st.checkbox("Starter")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
             Fountain_Lens = st.checkbox("Fountain lens")
             Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
             Motor_nonOperational = st.checkbox("Motor nonoperational")
             Motor_removal = st.checkbox("Motor removal")
             Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
-            Ending = st.checkbox("Ending")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
@@ -1355,50 +1292,67 @@ elif side == "Lake":
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
             if Starter:
-                report.append("Today we perform routine maintenance on the pond. An inspection was conducted to assess current conditions and maintenance needs. After the inspection,")
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
-                    "the pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+                    "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain appear to be fully operational at this time including the lights, GFCI and the motor.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
             if Fountain_lights:
                 report.append(
-                    "one of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
             if Fountain_Lens:
                 report.append(
-                    "the fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "the pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
             if Motor_nonOperational:
                 report.append(
-                    "the pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
             if Motor_removal:
                 report.append(
-                    "the pump motor was found to be non-operational and was removed from site for further inspection.")
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
             if Motor_Reinstalled:
-                report.append("the motor was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "the waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
-                report.append("the well reading was inspected at -time-, with a measurement of ###.")
+                report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("the water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("the water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("all visible trash/debris was collected and properly disposed of to maintain an accessible and a neat environment.")
-            if Ending:
-                report.append("The pond was left in good conditions at the time of departure.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -1407,7 +1361,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Hidden Oaks":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Hidden Oaks")
             st.image(f"hidden_oaks_1.png", caption="Hidden Oaks 1", use_container_width=True)
@@ -1421,119 +1375,125 @@ elif side == "Lake":
             st.checkbox("Pick up trash", key = "trash_1")
             st.checkbox("Take a picture")
             st.checkbox("Do any specific task for today", key = "specific_task_1")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            st.image(f"hidden_oaks_1.png", caption="Hidden Oaks 1", use_container_width=True)
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            # st.markdown("### Treatment")
+            # st.checkbox("100 lbs copper sulfate (broadcast)") #Filamentous Algae control
+            # st.checkbox("2 jugs of argos (spray)") #Filamentous Algae when bloom
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("50 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            st.image(f"hidden_oaks_2.png", caption="Hidden Oaks 2", use_container_width=True)
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"], key = "vegetation_1")
-            if vegetation == "Filamentous Algae":
-                st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
-                st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+            st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
-            st.subheader("Hidden Oaks 1")
-            st.write("234 Sun Daisy Rd, Georgetown, Tx 78626")
-            m = folium.Map(location=[30.5939999, -97.6645092], zoom_start=12)
-            folium.Marker(location=[30.5939999, -97.6645092], popup="Hidden Oaks 1",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            st.subheader("Hidden Oaks")
+            #st.write("234 Sun Daisy Rd, Georgetown, Tx 78626")
+            #m = folium.Map(location=[30.5939999, -97.6645092], zoom_start=12)
+            #folium.Marker(location=[30.5939999, -97.6645092], popup="Hidden Oaks 1",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+            #st.subheader("Hidden Oaks 2")
+            #st.write("302 Georgia Lace Trail, Georgetown, Tx 78626")
+            #m = folium.Map(location=[30.5935153, -97.6615795], zoom_start=12)
+            #folium.Marker(location=[30.5935153, -97.6615795], popup="Hidden Oaks 2", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            m = folium.Map(location=[30.59, -97.66], zoom_start=12)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.5939999, -97.6645092], popup="Hidden Oaks 1 - 234 Sun Daisy Rd, Georgetown, Tx 78626", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.5935153, -97.6615795], popup="Hidden Oaks 2 - 302 Georgia Lace Trail, Georgetown, Tx 78626", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
-            st.subheader("Hidden Oaks 2")
-            st.write("302 Georgia Lace Trail, Georgetown, Tx 78626")
-            m = folium.Map(location=[30.5935153, -97.6615795], zoom_start=12)
-            folium.Marker(location=[30.5935153, -97.6615795], popup="Hidden Oaks 2", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            st_folium(m)
+
+
+
+
         elif page == "Report Generator":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
-            Starter = st.checkbox("Starter")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
             Fountain_Lens = st.checkbox("Fountain lens")
             Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
             Motor_nonOperational = st.checkbox("Motor nonoperational")
             Motor_removal = st.checkbox("Motor removal")
             Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
-            Ending = st.checkbox("Ending")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
@@ -1541,29 +1501,42 @@ elif side == "Lake":
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
             if Starter:
-                report.append("Today we perform routine maintenance on both ponds. An inspection was conducted to assess current conditions and maintenance needs. After the inspection,")
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
-                    "The pond basin and surrounding areas in Hidden Oaks 2 was mowed to control vegetation growth and maintain site appearance.")
+                    "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
             if Fountain_lights:
                 report.append(
                     "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
             if Fountain_Lens:
                 report.append(
                     "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "Hidden Oaks pond 1 was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
             if Motor_nonOperational:
                 report.append(
                     "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
@@ -1571,20 +1544,24 @@ elif side == "Lake":
                 report.append(
                     "The pump motor was found to be non-operational and was removed from site for further inspection.")
             if Motor_Reinstalled:
-                report.append("The motor was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level in [X] is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level in [X] is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("All visible trash/debris was collected and properly disposed of to improve site appearance.")
-            if Ending:
-                report.append("Both ponds were left in good conditions at the time of departure.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -1593,7 +1570,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "San Gabriel":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("San Gabriel")
             st.image(f"san_gabriel.png", caption="San Gabriel", use_container_width=True)
@@ -1601,76 +1578,111 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            # st.markdown("### Treatment")
-            # st.checkbox("100 lbs copper sulfate (broadcast)") #Filamentous Algae control
-            # st.checkbox("2 jugs of argos (spray)") #Filamentous Algae when bloom
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
+                st.image("bushy_pondweed.png", use_container_width=True)
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
+                st.image("cat_tail.png", use_container_width=True)
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
+                st.image("arrow_head.png", use_container_width=True)
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.image("prim_rose_plant.png", use_container_width=True)
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
+                st.image("lily.png", use_container_width=True)
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
+                st.image("alligator_weed.png", use_container_width=True)
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
+                st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
                 st.write("Argos - Spray")
-            if vegetation == "Bushy Pondweed":
-                st.image("bushy_pondweed.png", use_container_width=True)
+            elif vegetation == "Bushy Pondweed":
                 st.markdown("### Treatment")
                 st.write("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
+            elif vegetation == "Cattail":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
                 st.markdown("### Treatment")
-                st.write("Aquamaster - spray")
-                # st.write("### Routine Treatment")
-                # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
                 st.markdown("### Treatment")
-                st.write("Aquathol K - spray")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("50 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
+            st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
-            st.write("Red Berry Pass, Georgetown, Texas 78628")
-            m = folium.Map(location=[30.6239602, -97.7695834], zoom_start=12)
-            folium.Marker(location=[30.6239602, -97.7695834], popup="San Gabriel", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            st.subheader("San Gabriel")
+            #m = folium.Map(location=[30.6239602, -97.7695834], zoom_start=12)
+            #folium.Marker(location=[30.6239602, -97.7695834], popup="San Gabriel", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            m = folium.Map(location=[30.62, -97.77], zoom_start=15)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.6239602, -97.7695834], popup="Red Berry Pass, Georgetown, Texas 78628", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
-            Starter = st.checkbox("Starter")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
             Fountain_Lens = st.checkbox("Fountain lens")
             Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
             Motor_nonOperational = st.checkbox("Motor nonoperational")
             Motor_removal = st.checkbox("Motor removal")
             Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
-            Ending = st.checkbox("Ending")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
@@ -1678,52 +1690,67 @@ elif side == "Lake":
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
             if Starter:
-                report.append("Today we perform routine maintenance on the pond. An inspection was conducted to assess current conditions and maintenance needs. After the inspection,")
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
-                    "the pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+                    "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
                 report.append(
-                    "The fountain appear to be fully operational at this time including the lights, GFCI and the motor.")
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
             if Fountain_lights:
                 report.append(
-                    "one of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
             if Fountain_Lens:
                 report.append(
-                    "the fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "the pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
             if Motor_nonOperational:
                 report.append(
-                    "the pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
             if Motor_removal:
                 report.append(
-                    "the pump motor was found to be non-operational and was removed from site for further inspection.")
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
             if Motor_Reinstalled:
-                report.append("the motor was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "the waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
-                report.append("the well reading was inspected at -time-, with a measurement of ###.")
+                report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("the water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("the water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
                 report.append(
-                    "all visible trash/debris was collected and properly disposed of to maintain an accessible and a neat environment.")
-            if Ending:
-                report.append("The pond was left in good conditions at the time of departure.")
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -1732,7 +1759,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Camden Shadow Brooke":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Camden Shadow Brooke")
             st.image(f"cammden.png", caption="Camden Shadow Brooke", use_container_width=True)
@@ -1741,49 +1768,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            # st.markdown("### Treatment")
-            # st.checkbox("100 lbs copper sulfate (broadcast)") #Filamentous Algae control
-            # st.checkbox("2 jugs of argos (spray)") #Filamentous Algae when bloom
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
+                st.image("bushy_pondweed.png", use_container_width=True)
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
+                st.image("cat_tail.png", use_container_width=True)
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
+                st.image("arrow_head.png", use_container_width=True)
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.image("prim_rose_plant.png", use_container_width=True)
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
+                st.image("lily.png", use_container_width=True)
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
+                st.image("alligator_weed.png", use_container_width=True)
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
+                st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
                 st.write("Argos - Spray")
-            if vegetation == "Bushy Pondweed":
-                st.image("bushy_pondweed.png", use_container_width=True)
+            elif vegetation == "Bushy Pondweed":
                 st.markdown("### Treatment")
                 st.write("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
+            elif vegetation == "Cattail":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
                 st.markdown("### Treatment")
-                st.write("Aquamaster - spray")
-                # st.write("### Routine Treatment")
-                # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
                 st.markdown("### Treatment")
-                st.write("Aquathol K - spray")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("30 lbs. Cutrine Plus")
+            st.write("30 lbs (whole bag) Cutrine Gran Plus")
         elif page == "Map":
             st.write("Camden Shadow Brook Apartments, Austin, Texas 78748")
             m = folium.Map(location=[30.1724075, -97.8035975], zoom_start=12)
@@ -1793,24 +1842,28 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
-            Starter = st.checkbox("Starter")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
             Fountain_Lens = st.checkbox("Fountain lens")
             Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
             Motor_nonOperational = st.checkbox("Motor nonoperational")
             Motor_removal = st.checkbox("Motor removal")
             Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
-            Ending = st.checkbox("Ending")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
@@ -1818,52 +1871,67 @@ elif side == "Lake":
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
             if Starter:
-                report.append("Today we perform routine maintenance on the pond. An inspection was conducted to assess current conditions and maintenance needs. After the inspection,")
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
-                    "the pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+                    "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
                 report.append(
-                    "The fountain appear to be fully operational at this time including the lights, GFCI and the motor.")
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
             if Fountain_lights:
                 report.append(
-                    "one of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
             if Fountain_Lens:
                 report.append(
-                    "the fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "the pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
             if Motor_nonOperational:
                 report.append(
-                    "the pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
             if Motor_removal:
                 report.append(
-                    "the pump motor was found to be non-operational and was removed from site for further inspection.")
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
             if Motor_Reinstalled:
-                report.append("the motor was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "the waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
-                report.append("the well reading was inspected at -time-, with a measurement of ###.")
+                report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("the water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("the water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
                 report.append(
-                    "all visible trash/debris was collected and properly disposed of to maintain an accessible and a neat environment.")
-            if Ending:
-                report.append("The pond was left in good conditions at the time of departure.")
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -1872,7 +1940,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Easton Park":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Easton Park")
             st.image(f"easton_park.png", caption="Falcon Pointe", use_container_width=True)
@@ -1881,48 +1949,71 @@ elif side == "Lake":
             st.checkbox("Fountain inspection and testing")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
+            st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
             m = folium.Map(location=[30.157468, -97.717157], zoom_start=12)
             folium.Marker(location=[30.157468, -97.717157], popup="Easton Park",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
@@ -1931,50 +2022,71 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
             Fountain_Lens = st.checkbox("Fountain lens")
             Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
             Motor_nonOperational = st.checkbox("Motor nonoperational")
             Motor_removal = st.checkbox("Motor removal")
             Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
             if Fountain_lights:
                 report.append(
                     "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
             if Fountain_Lens:
                 report.append(
                     "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
             if Motor_nonOperational:
                 report.append(
                     "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
@@ -1982,18 +2094,24 @@ elif side == "Lake":
                 report.append(
                     "The pump motor was found to be non-operational and was removed from site for further inspection.")
             if Motor_Reinstalled:
-                report.append("The motor was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -2002,58 +2120,79 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Wilder":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
-            st.subheader("Blanco Vista")
+            st.subheader("Wilder")
             st.image(f"wilder.png", caption="Wilder", use_container_width=True)
             st.markdown("### Tasks")
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("50 lbs of copper sulfate (broadcast using boat) to control filamentous algae")
+            st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
             st.write("Near 10530 Waterfowl, Adkins, TX 78101")
             m = folium.Map(location=[29.4339995, -98.2781728], zoom_start=12)
@@ -2063,24 +2202,28 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
-            Starter = st.checkbox("Starter")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
             Fountain_Lens = st.checkbox("Fountain lens")
             Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
             Motor_nonOperational = st.checkbox("Motor nonoperational")
             Motor_removal = st.checkbox("Motor removal")
             Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
-            Ending = st.checkbox("Ending")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
@@ -2088,53 +2231,67 @@ elif side == "Lake":
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
             if Starter:
-                report.append(
-                    "Today we perform routine maintenance on the pond. An inspection was conducted to assess current conditions and maintenance needs. After the inspection,")
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
-                    "the pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+                    "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
                 report.append(
-                    "The fountain appear to be fully operational at this time including the lights, GFCI and the motor.")
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
             if Fountain_lights:
                 report.append(
-                    "one of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
             if Fountain_Lens:
                 report.append(
-                    "the fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "the pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
             if Motor_nonOperational:
                 report.append(
-                    "the pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
             if Motor_removal:
                 report.append(
-                    "the pump motor was found to be non-operational and was removed from site for further inspection.")
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
             if Motor_Reinstalled:
-                report.append("the motor was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "the waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
-                report.append("the well reading was inspected at -time-, with a measurement of ###.")
+                report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("the water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("the water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
                 report.append(
-                    "all visible trash/debris was collected and properly disposed of to maintain an accessible and a neat environment.")
-            if Ending:
-                report.append("The pond was left in good conditions at the time of departure.")
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -2143,7 +2300,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Blanco Vista":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Blanco Vista")
             st.image(f"blanco_vista.png", caption="Blanco Vista", use_container_width=True)
@@ -2153,50 +2310,71 @@ elif side == "Lake":
             st.checkbox("Check for Well Reading")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("100 lbs of copper sulfate (broadcast using boat) to control filamentous algae")
+            st.write("100 lbs copper sulfate")
         elif page == "Map":
             st.write("413 Lacey Oak Lp, San Marcos, TX")
             m = folium.Map(location=[29.940703, -97.894674], zoom_start=12)
@@ -2206,24 +2384,28 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
-            Starter = st.checkbox("Starter")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
             Fountain_Lens = st.checkbox("Fountain lens")
             Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
             Motor_nonOperational = st.checkbox("Motor nonoperational")
             Motor_removal = st.checkbox("Motor removal")
             Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
-            Ending = st.checkbox("Ending")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
@@ -2231,53 +2413,67 @@ elif side == "Lake":
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
             if Starter:
-                report.append(
-                    "Today we perform routine maintenance on the pond. An inspection was conducted to assess current conditions and maintenance needs. After the inspection,")
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
-                    "the pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+                    "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
                 report.append(
-                    "The fountain appear to be fully operational at this time including the lights, GFCI and the motor.")
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
             if Fountain_lights:
                 report.append(
-                    "one of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
             if Fountain_Lens:
                 report.append(
-                    "the fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "the pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
             if Motor_nonOperational:
                 report.append(
-                    "the pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
             if Motor_removal:
                 report.append(
-                    "the pump motor was found to be non-operational and was removed from site for further inspection.")
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
             if Motor_Reinstalled:
-                report.append("the motor was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "the waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
-                report.append("the well reading was inspected at -time-, with a measurement of ###.")
+                report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("the water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("the water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
                 report.append(
-                    "all visible trash/debris was collected and properly disposed of to maintain an accessible and a neat environment.")
-            if Ending:
-                report.append("The pond was left in good conditions at the time of departure.")
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -2286,7 +2482,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Rosenbusch":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.header("Rosenbusch")
             st.subheader("Pond 1")
@@ -2317,48 +2513,75 @@ elif side == "Lake":
             st.checkbox("Pick up trash", key="pickup_trash_4")
             st.checkbox("Mow", key="mow_4")
             st.checkbox("Do any specific task for today", key="specific_task_4")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            # st.markdown("### Treatment")
+            # st.checkbox("100 lbs copper sulfate (broadcast)") #Filamentous Algae control
+            # st.checkbox("2 jugs of argos (spray)") #Filamentous Algae when bloom
+            st.subheader("Secluded Willows")
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
+            st.write("### Algae Control Treatment")
+            st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
             st.subheader("Pond 1")
             st.write("2090 Vis Rdg, Leander, TX 78641")
@@ -2383,46 +2606,97 @@ elif side == "Lake":
         elif page == "Report Generator":
             st.header("Test")
 
-            #sump_clean = st.checkbox("Sump Cleaning")
+            # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
-            #if sump_clean:
-                #report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
+            # if sump_clean:
+            # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
-                report.append("The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+                report.append(
+                    "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
-                report.append("Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                report.append(
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
-                report.append("Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                report.append(
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
-                report.append("The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                report.append(
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
-                report.append("The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                report.append(
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -2431,7 +2705,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Hawkes Landing":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.header("Hawkes Landing")
             st.subheader("Pond 1")
@@ -2472,48 +2746,75 @@ elif side == "Lake":
             st.checkbox("Pick up trash", key="pickup_trash_5")
             st.checkbox("Mow", key="mow_5")
             st.checkbox("Do any specific task for today", key="specific_task_5")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            # st.markdown("### Treatment")
+            # st.checkbox("100 lbs copper sulfate (broadcast)") #Filamentous Algae control
+            # st.checkbox("2 jugs of argos (spray)") #Filamentous Algae when bloom
+            st.subheader("Secluded Willows")
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
+            st.write("### Algae Control Treatment")
+            st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
             st.subheader("Pond 1")
             st.write("298 Sebastians Run, Lakeway, TX 78738")
@@ -2538,46 +2839,97 @@ elif side == "Lake":
         elif page == "Report Generator":
             st.header("Test")
 
-            #sump_clean = st.checkbox("Sump Cleaning")
+            # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
-            #if sump_clean:
-                #report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
+            # if sump_clean:
+            # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
-                report.append("The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+                report.append(
+                    "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
-                report.append("Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                report.append(
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
-                report.append("Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                report.append(
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
-                report.append("The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                report.append(
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
-                report.append("The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                report.append(
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -2586,7 +2938,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Lakeside Crossing":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Lakeside Crossing")
             st.image(f"lakeside_crossing.png", caption="Lakeside Crossing", use_container_width=True)
@@ -2595,48 +2947,71 @@ elif side == "Lake":
             st.checkbox("Fountain inspection and testing")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("50 lbs of copper sulfate")
+            st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
             st.write("229 Fountain Grove Dr, Kyle, TX")
             m = folium.Map(location=[30.016148, -97.844254], zoom_start=12)
@@ -2646,50 +3021,71 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
             Fountain_Lens = st.checkbox("Fountain lens")
             Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
             Motor_nonOperational = st.checkbox("Motor nonoperational")
             Motor_removal = st.checkbox("Motor removal")
             Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
             if Fountain_lights:
                 report.append(
                     "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
             if Fountain_Lens:
                 report.append(
                     "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
             if Motor_nonOperational:
                 report.append(
                     "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
@@ -2697,18 +3093,24 @@ elif side == "Lake":
                 report.append(
                     "The pump motor was found to be non-operational and was removed from site for further inspection.")
             if Motor_Reinstalled:
-                report.append("The motor was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -2717,120 +3119,177 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Valley Ranch":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Valley Ranch")
             st.image(f"valley_ranch.png", caption="Valley Ranch", use_container_width=True)
             st.markdown("### Tasks")
             st.checkbox("Treat")
             st.checkbox("Fountain inspection and testing")
+            st.checkbox("Water features pumps inspection and testing")
+            st.checkbox("Well Reading")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+            st.write("Entrance gate - C2560 and Second entrance gate - 4550")
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("50 lbs of copper sulfate")
+            st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
-            st.write("13639 Valley Lk, San Antonio, TX")
-            m = folium.Map(location=[29.519325, -98.765837], zoom_start=12)
-            folium.Marker(location=[29.519325, -98.765837], popup="Park near the entrance, next to trash container",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.write("13639 Valley Lk, San Antonio, TX")
+            #m = folium.Map(location=[29.519325, -98.765837], zoom_start=12)
+            #folium.Marker(location=[29.519325, -98.765837], popup="Park near the entrance, next to trash container",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+            st.subheader("Valley Ranch")
+            m = folium.Map(location=[29.50, -98.80], zoom_start=12)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.519325, -98.765837],
+                      popup="13639 Valley Lk, San Antonio, TX",
+                      icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
             Fountain_Lens = st.checkbox("Fountain lens")
             Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
             Motor_nonOperational = st.checkbox("Motor nonoperational")
             Motor_removal = st.checkbox("Motor removal")
             Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append("The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append("An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append("After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
-                report.append("Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                report.append("Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
-                report.append("Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                report.append("Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append("The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
             if Fountain_lights:
                 report.append("One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
             if Fountain_Lens:
                 report.append("The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append("All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append("Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
-                report.append("The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                report.append("Treatment was performed for -plant species- growth observed forming throughout the pond.")
             if Motor_nonOperational:
                 report.append("The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
             if Motor_removal:
                 report.append("The pump motor was found to be non-operational and was removed from site for further inspection.")
             if Motor_Reinstalled:
-                report.append("The motor was reinstalled, tested, and is fully operational at this time.")
+                report.append("The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
-                report.append("The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                report.append("The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append("The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append("The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append("Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
+
 
             st.header("Generated Report")
 
@@ -2839,7 +3298,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Red Bird Ranch":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
                 st.subheader("Red Bird Ranch")
                 st.image(f"red_bird_ranch.png", caption="Red Bird Ranch", use_container_width=True)
@@ -2847,49 +3306,71 @@ elif side == "Lake":
                 st.checkbox("Treat")
                 st.checkbox("Pick up trash")
                 st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-                    # st.markdown("### Treatment")
-                    # st.checkbox("100 lbs copper sulfate (broadcast)") #Filamentous Algae control
-                    # st.checkbox("2 jugs of argos (spray)") #Filamentous Algae when bloom
-                vegetation = st.selectbox("Choose vegetation type:",
-                                              ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                               "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-                if vegetation == "Filamentous Algae":
-                    st.image("filamentous_algae.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Argos - Spray")
-                if vegetation == "Bushy Pondweed":
-                    st.image("bushy_pondweed.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Current - Spray")
-                if vegetation == "Cattail":
-                    st.image("cat_tail.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Phase & Aquaneat - spray")
-                if vegetation == "Arrowhead":
-                    st.image("arrow_head.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Phase & Aquaneat - spray")
-                if vegetation == "Primrose":
-                    st.image("prim_rose_plant.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Phase & Aquaneat - spray")
-                if vegetation == "Lily":
-                    st.image("lily.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Phase & Aquaneat - spray")
-                if vegetation == "Alligator Weed":
-                    st.image("alligator_weed.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Aquamaster - spray")
-                        # st.write("### Routine Treatment")
-                        # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-                if vegetation == "American Pondweed":
-                    st.image("american_weed.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.write("Aquathol K - spray")
-                st.write("### Algae Control Treatment")
-                st.write("150 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
+                st.image("filamentous_algae.png", use_container_width=True)
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
+                st.image("bushy_pondweed.png", use_container_width=True)
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
+                st.image("cat_tail.png", use_container_width=True)
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
+                st.image("arrow_head.png", use_container_width=True)
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.image("prim_rose_plant.png", use_container_width=True)
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
+                st.image("lily.png", use_container_width=True)
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
+                st.image("alligator_weed.png", use_container_width=True)
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
+                st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
+                st.markdown("### Treatment")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
+            st.write("### Algae Control Treatment")
+            st.write("100 lbs copper sulfate")
         elif page == "Map":
                 st.write("163 Garden Emerald, San Antonio, Texas 78253")
                 m = folium.Map(location=[29.4387324, -98.8065347], zoom_start=12)
@@ -2898,79 +3379,97 @@ elif side == "Lake":
         elif page == "Report Generator":
                 st.header("Test")
 
-                    # sump_clean = st.checkbox("Sump Cleaning")
-                Starter = st.checkbox("Starter")
+                # sump_clean = st.checkbox("Sump Cleaning")
+                Starter = st.checkbox("Introduction")
                 Mow = st.checkbox("Mow")
                 Chemical = st.checkbox("Chemical")
+                Fountain_Inspection = st.checkbox("Fountain Inspection")
                 Fountain_Operational = st.checkbox("Fountain operational")
                 Fountain_NonOperational = st.checkbox("Fountain non-operational")
                 Fountain_Removal = st.checkbox("Fountain removal")
                 Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+                Fountain_Timers = st.checkbox("Fountain timers")
                 Fountain_Lens = st.checkbox("Fountain lens")
                 Fountain_lights = st.checkbox("Fountain lights")
+                Pump_Operational = st.checkbox("Pumps operational")
+                Pump_Nonoperational = st.checkbox("Pumps nonoperational")
                 Motor_nonOperational = st.checkbox("Motor nonoperational")
                 Motor_removal = st.checkbox("Motor removal")
                 Motor_Reinstalled = st.checkbox("Motor re-installed")
                 Well_reading = st.checkbox("Well reading")
                 Pressure_wash = st.checkbox("Pressure wash")
                 Trash = st.checkbox("Trash")
-                Water_level_increase = st.checkbox("Water level increase")
-                Water_level_decrease = st.checkbox("Water level decrease")
-                Ending = st.checkbox("Ending")
+                Water_level_increase = st.checkbox("ABOVE optimal level")
+                Water_level_decrease = st.checkbox("BELOW optimal level")
+                End = st.checkbox("Outro")
 
                 report = []
 
-                    # if sump_clean:
-                    # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
+                # if sump_clean:
+                # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
                 if Starter:
-                    report.append(
-                            "Today we perform routine maintenance on the pond. An inspection was conducted to assess current conditions and maintenance needs. After the inspection,")
+                    report.append("Today we perform routine maintenance and assessment on the community pond.")
                 if Mow:
                     report.append(
-                            "the pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+                        "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+                if Fountain_Inspection:
+                    report.append(
+                        "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
                 if Fountain_Operational:
                     report.append(
-                            "The fountain appear to be fully operational at this time including the lights, GFCI and the motor.")
+                        "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
                 if Fountain_Removal:
                     report.append(
-                            "the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                        "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
                 if Fountain_NonOperational:
                     report.append(
-                            "the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                        "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
                 if Fountain_Reinstalled:
-                    report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                    report.append(
+                        "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+                if Fountain_Timers:
+                    report.append("The fountain timers were found to be non-operational at the time of service.")
                 if Fountain_lights:
                     report.append(
-                            "one of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+                        "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
                 if Fountain_Lens:
                     report.append(
-                            "the fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+                        "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+                if Pump_Operational:
+                    report.append(
+                        "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+                if Pump_Nonoperational:
+                    report.append(
+                        "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
                 if Chemical:
                     report.append(
-                            "the pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                        "Treatment was performed for -plant species- growth observed forming throughout the pond.")
                 if Motor_nonOperational:
                     report.append(
-                            "the pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+                        "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
                 if Motor_removal:
                     report.append(
-                            "the pump motor was found to be non-operational and was removed from site for further inspection.")
+                        "The pump motor was found to be non-operational and was removed from site for further inspection.")
                 if Motor_Reinstalled:
-                    report.append("the motor was reinstalled, tested, and is fully operational at this time.")
+                    report.append(
+                        "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
                 if Pressure_wash:
                     report.append(
-                            "the waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                        "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
                 if Well_reading:
-                    report.append("the well reading was inspected at -time-, with a measurement of ###.")
+                    report.append("The well reading was inspected at -time-, with a measurement of ###.")
                 if Water_level_increase:
-                    report.append("the water level is [X] inches below from its optimal level.")
+                    report.append(
+                        "The water level was observed to be about [X] inches above the optimal level at the time of service.")
                 if Water_level_decrease:
-                    report.append("the water level is [X] inches above from its optimal level.")
+                    report.append(
+                        "The water level was observed to be about [X] inches below the optimal level at the time of service.")
                 if Trash:
                     report.append(
-                            "all visible trash/debris was collected and properly disposed of to maintain an accessible and a neat environment.")
-                if Ending:
-                    report.append("The pond was left in good conditions at the time of departure.")
+                        "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+                if End:
+                    report.append("The area was left in good conditions at the time of departure.")
 
                 st.header("Generated Report")
 
@@ -2979,7 +3478,7 @@ elif side == "Lake":
                     st.write(final_report)
 
     if site == "Hunters Pond":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Hunters Pond")
             st.image(f"hunters_pond.png", caption="Hunters Pond", use_container_width=True)
@@ -2987,48 +3486,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("100 lbs of copper sulfate")
+            st.write("50 lbs copper sulfate")
         elif page == "Map":
             st.write("9942 Hunters Pond, San Antonio, TX")
             m = folium.Map(location=[29.317733, -98.543061], zoom_start=12)
@@ -3038,50 +3560,96 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -3090,7 +3658,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "DR Horton":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("DR Horton")
             st.image(f"drr_horton.png", caption="DR Horton", use_container_width=True)
@@ -3100,48 +3668,71 @@ elif side == "Lake":
             st.checkbox("Get Well Reading")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("50 lbs of copper sulfate")
+            st.write("50 lbs copper sulfate")
         elif page == "Map":
             st.write("Near D.R. Horton San Antonio Division Office, San Antonio, TX")
             m = folium.Map(location=[29.603528, -98.382056], zoom_start=12)
@@ -3151,50 +3742,96 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
             Trash = st.checkbox("Trash")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -3203,7 +3840,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Rhine Valley":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Rhine Valley")
             st.image(f"rhine_valley.png", caption="Rhine Valley", use_container_width=True)
@@ -3211,48 +3848,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Argo (spray) - Filamentous Algae when bloom")
-                st.write("Aquathol K - broadcast")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
+                st.image("cat_tail.png", use_container_width=True)
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
+                st.image("arrow_head.png", use_container_width=True)
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.image("prim_rose_plant.png", use_container_width=True)
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
+                st.image("lily.png", use_container_width=True)
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
+                st.image("alligator_weed.png", use_container_width=True)
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
+                st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
+                st.markdown("### Treatment")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
                 st.markdown("### Treatment")
                 st.write("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
+            elif vegetation == "Cattail":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
                 st.markdown("### Treatment")
-                st.write("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
                 st.markdown("### Treatment")
-                st.write("Aquathol K")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("100 lbs of copper sulfate")
+            st.write("100 lbs copper sulfate")
         elif page == "Map":
             st.write("9984 Sarrebourg Street, Schertz, TX")
             m = folium.Map(location=[29.5269856, -98.2348819], zoom_start=12)
@@ -3262,58 +3922,105 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
             if report:
                 final_report = " ".join(report)
                 st.write(final_report)
+
     if site == "Whisper Falls":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Whisper Falls 1")
             st.image(f"whisper_falls.png", caption="Whisper Falls 1", use_container_width=True)
@@ -3332,91 +4039,75 @@ elif side == "Lake":
             st.checkbox("Fountain inspection and testing")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            st.subheader("Site 1")
-            st.image(f"whisper_falls.png", caption="Whisper Falls", use_container_width=True)
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            # st.markdown("### Treatment")
+            # st.checkbox("100 lbs copper sulfate (broadcast)") #Filamentous Algae control
+            # st.checkbox("2 jugs of argos (spray)") #Filamentous Algae when bloom
+            st.subheader("Secluded Willows")
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Argo (spray) - Filamentous Algae when bloom")
-                st.write("Aquathol K - broadcast")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
+                st.image("cat_tail.png", use_container_width=True)
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
+                st.image("arrow_head.png", use_container_width=True)
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.image("prim_rose_plant.png", use_container_width=True)
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
+                st.image("lily.png", use_container_width=True)
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
+                st.image("alligator_weed.png", use_container_width=True)
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
+                st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
+                st.markdown("### Treatment")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
                 st.markdown("### Treatment")
                 st.write("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
+            elif vegetation == "Cattail":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
                 st.markdown("### Treatment")
-                st.write("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
                 st.markdown("### Treatment")
-                st.write("Aquathol K")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("30 lbs of Cutrine Plus")
-            st.subheader("Site 2")
-            st.image(f"whisper_falls2.png", caption="Whisper Falls", use_container_width=True)
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"], key="vegetation_select_1")
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
-                st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Argo (spray) - Filamentous Algae when bloom")
-                st.write("Aquathol K - broadcast")
-            if vegetation == "Bushy Pondweed":
-                st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Aquathol K")
-            st.write("### Algae Control Treatment")
-            st.write("30 lbs of Cutrine Plus")
+            st.write("50 lbs Copper Sulfate")
         elif page == "Map":
             st.write("13125 Tremolo Echo, San Antonio, TX")
             m = folium.Map(location=[29.372891, -98.753637], zoom_start=12)
@@ -3426,58 +4117,105 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
             if report:
                 final_report = " ".join(report)
                 st.write(final_report)
+
     if site == "Sundance Crossing":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Sundance Crossing")
             st.image(f"sundance_crossing1.png", caption="Sundance Crossing 1", use_container_width=True)
@@ -3485,89 +4223,80 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
+        elif page == "Plant ID & Treatment":
+            # st.markdown("### Treatment")
+            # st.checkbox("100 lbs copper sulfate (broadcast)") #Filamentous Algae control
+            # st.checkbox("2 jugs of argos (spray)") #Filamentous Algae when bloom
+            st.subheader("Secluded Willows")
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
+                st.image("filamentous_algae.png", use_container_width=True)
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
+                st.image("bushy_pondweed.png", use_container_width=True)
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
+                st.image("cat_tail.png", use_container_width=True)
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
+                st.image("arrow_head.png", use_container_width=True)
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.image("prim_rose_plant.png", use_container_width=True)
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
+                st.image("lily.png", use_container_width=True)
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
+                st.image("alligator_weed.png", use_container_width=True)
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
+                st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
+                st.markdown("### Treatment")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
             st.subheader("Site 1")
             st.image(f"sundance_crossing1.png", caption="Sundance Crossing 1", use_container_width=True)
             #    st.write("### Routine Treatment")
             #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentods Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
-                st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Argo (spray) - Filamentous Algae when bloom")
-                st.write("Aquathol K - broadcast")
-            if vegetation == "Bushy Pondweed":
-                st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Aquathol K")
             st.write("### Algae Control Treatment")
             st.write("25 lbs of Copper Sulfate")
             st.subheader("Site 2")
             st.image(f"sundance_crossing2.png", caption="Sundance Crossing 2", use_container_width=True)
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"], key="vegetation_select_2")
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
-                st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Argo (spray) - Filamentous Algae when bloom")
-                st.write("Aquathol K - broadcast")
-            if vegetation == "Bushy Pondweed":
-                st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Aquathol K")
             st.write("### Algae Control Treatment")
             st.write("25 lbs of Copper Sulfate")
             st.subheader("Site 3")
@@ -3587,50 +4316,96 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -3639,7 +4414,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Woods of Alon":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Woods of Alon")
             st.image(f"woods_alon.png", caption="Woods of Alon", use_container_width=True)
@@ -3648,49 +4423,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            # st.markdown("### Treatment")
-            # st.checkbox("100 lbs copper sulfate (broadcast)") #Filamentous Algae control
-            # st.checkbox("2 jugs of argos (spray)") #Filamentous Algae when bloom
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
+                st.image("bushy_pondweed.png", use_container_width=True)
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
+                st.image("cat_tail.png", use_container_width=True)
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
+                st.image("arrow_head.png", use_container_width=True)
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.image("prim_rose_plant.png", use_container_width=True)
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
+                st.image("lily.png", use_container_width=True)
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
+                st.image("alligator_weed.png", use_container_width=True)
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
+                st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
                 st.write("Argos - Spray")
-            if vegetation == "Bushy Pondweed":
-                st.image("bushy_pondweed.png", use_container_width=True)
+            elif vegetation == "Bushy Pondweed":
                 st.markdown("### Treatment")
                 st.write("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
+            elif vegetation == "Cattail":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
                 st.markdown("### Treatment")
-                st.write("Aquamaster - spray")
-                # st.write("### Routine Treatment")
-                # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
                 st.markdown("### Treatment")
-                st.write("Aquathol K - spray")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("60 lbs Cutrine Plus")
+            st.write("30 lbs Cutrine Gran Plus")
         elif page == "Map":
             st.write("2906 Zurich, San Antonio, Texas 78230")
             m = folium.Map(location=[29.549143, -98.534438], zoom_start=12)
@@ -3700,24 +4497,28 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
-            Starter = st.checkbox("Starter")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
             Fountain_Lens = st.checkbox("Fountain lens")
             Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
             Motor_nonOperational = st.checkbox("Motor nonoperational")
             Motor_removal = st.checkbox("Motor removal")
             Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
-            Ending = st.checkbox("Ending")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
@@ -3725,53 +4526,67 @@ elif side == "Lake":
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
             if Starter:
-                report.append(
-                    "Today we perform routine maintenance on the pond. An inspection was conducted to assess current conditions and maintenance needs. After the inspection,")
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
-                    "the pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+                    "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
                 report.append(
-                    "The fountain appear to be fully operational at this time including the lights, GFCI and the motor.")
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
             if Fountain_lights:
                 report.append(
-                    "one of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
             if Fountain_Lens:
                 report.append(
-                    "the fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "the pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
             if Motor_nonOperational:
                 report.append(
-                    "the pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
             if Motor_removal:
                 report.append(
-                    "the pump motor was found to be non-operational and was removed from site for further inspection.")
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
             if Motor_Reinstalled:
-                report.append("the motor was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "the waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
-                report.append("the well reading was inspected at -time-, with a measurement of ###.")
+                report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("the water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("the water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
                 report.append(
-                    "all visible trash/debris was collected and properly disposed of to maintain an accessible and a neat environment.")
-            if Ending:
-                report.append("The pond was left in good conditions at the time of departure.")
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -3780,7 +4595,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Cowboy Cabin":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Cowboy Cabin")
             st.image(f"cowboy_cabin.png", caption="Cowboy Cabin", use_container_width=True)
@@ -3791,48 +4606,71 @@ elif side == "Lake":
             #st.checkbox("Do any specific task for today")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.write("Argo (spray) - Filamentous Algae when bloom")
-                st.write("Aquathol K - broadcast")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
+                st.image("cat_tail.png", use_container_width=True)
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
+                st.image("arrow_head.png", use_container_width=True)
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.image("prim_rose_plant.png", use_container_width=True)
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
+                st.image("lily.png", use_container_width=True)
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
+                st.image("alligator_weed.png", use_container_width=True)
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
+                st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
+                st.markdown("### Treatment")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
                 st.markdown("### Treatment")
                 st.write("Current - Spray")
-            if vegetation == "Cattail":
-                st.image("cat_tail.png", use_container_width=True)
+            elif vegetation == "Cattail":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
-                st.image("arrow_head.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
-                st.image("prim_rose_plant.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
-                st.image("lily.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
                 st.markdown("### Treatment")
-                st.write("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
-                st.image("alligator_weed.png", use_container_width=True)
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
                 st.markdown("### Treatment")
-                st.write("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
-                st.image("american_weed.png", use_container_width=True)
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
                 st.markdown("### Treatment")
-                st.write("Aquathol K")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("30 lbs of Cutrine Plus")
+            st.write("30 lbs Cutrine Gran Plus")
         elif page == "Map":
             st.write("10281 FM 20, Lockhart, TX")
             m = folium.Map(location=[29.786919, -97.734721], zoom_start=12)
@@ -3842,50 +4680,96 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -3894,7 +4778,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "The Willows HOA":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("The Willows HOA")
             st.image(f"willows_hoa.png", caption="The Willows HOA", use_container_width=True)
@@ -3902,48 +4786,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("100 lbs of copper sulfate")
+            st.write("100 lbs copper sulfate")
         elif page == "Map":
             st.write("4985 Lakeshore Dr, Killeen, TX")
             m = folium.Map(location=[31.086025, -97.680181], zoom_start=12)
@@ -3953,50 +4860,96 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -4005,7 +4958,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "River Bend":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("River Bend")
             st.image(f"river_bend.png", caption="River Bend", use_container_width=True)
@@ -4013,48 +4966,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("30 lbs of Cutrine Plus")
+            st.write("30 lbs copper sulfate")
         elif page == "Map":
             st.write("105 Whitewing Way, Floresville, TX")
             m = folium.Map(location=[29.156680, -98.182802], zoom_start=12)
@@ -4064,50 +5040,96 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -4116,7 +5138,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Preserve":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Preserve")
             st.image(f"preserve.png", caption="Preserve", use_container_width=True)
@@ -4125,48 +5147,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
+            st.write("### Algae Control Treatment")
+            st.write("50 lbs copper sulfate")
         elif page == "Map":
             st.write("Near New Braunfels, TX 78132")
             m = folium.Map(location=[29.7099256, -98.1997875], zoom_start=12)
@@ -4176,50 +5221,96 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -4228,7 +5319,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Wasser Ranch":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Wasser Ranch")
             st.image(f"wasser_ranch.png", caption="Wasser Ranch", use_container_width=True)
@@ -4238,48 +5329,71 @@ elif side == "Lake":
             st.checkbox("Pick up trash")
             st.checkbox("Well Reading")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("50 lbs. Copper Sulfate")
+            st.write("50 lbs copper sulfate")
         elif page == "Map":
             st.subheader("Wasser Ranch")
             st.write("630 Pader, New Braunfels, Texas 78130")
@@ -4290,24 +5404,28 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
-            Starter = st.checkbox("Starter")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
             Fountain_Lens = st.checkbox("Fountain lens")
             Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
             Motor_nonOperational = st.checkbox("Motor nonoperational")
             Motor_removal = st.checkbox("Motor removal")
             Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
-            Ending = st.checkbox("Ending")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
@@ -4315,29 +5433,42 @@ elif side == "Lake":
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
             if Starter:
-                report.append("Today we perform routine maintenance on both ponds. An inspection was conducted to assess current conditions and maintenance needs. After the inspection,")
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
-                    "The pond basin and surrounding areas in Hidden Oaks 2 was mowed to control vegetation growth and maintain site appearance.")
+                    "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
             if Fountain_lights:
                 report.append(
                     "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
             if Fountain_Lens:
                 report.append(
                     "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "Hidden Oaks pond 1 was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
             if Motor_nonOperational:
                 report.append(
                     "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
@@ -4345,20 +5476,24 @@ elif side == "Lake":
                 report.append(
                     "The pump motor was found to be non-operational and was removed from site for further inspection.")
             if Motor_Reinstalled:
-                report.append("The motor was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level in [X] is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level in [X] is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("All visible trash/debris was collected and properly disposed of to improve site appearance.")
-            if Ending:
-                report.append("Both ponds were left in good conditions at the time of departure.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -4367,7 +5502,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "The Reserve at Lake Travis":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("The Reserve at Lake Travis")
             st.image(f"lake_travis.png", caption="The Reserve at Lake Travis", use_container_width=True)
@@ -4376,48 +5511,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("30 lbs. Cutrine Plus")
+            st.write("30 lbs Cutrine Gran Plus")
         elif page == "Map":
             st.subheader("The Reserve at Lake Travis")
             st.write("The Reserve At Lake Travis, Briarcliff, TX 78669")
@@ -4428,24 +5586,28 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
-            Starter = st.checkbox("Starter")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
             Fountain_Lens = st.checkbox("Fountain lens")
             Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
             Motor_nonOperational = st.checkbox("Motor nonoperational")
             Motor_removal = st.checkbox("Motor removal")
             Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
-            Ending = st.checkbox("Ending")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
@@ -4453,29 +5615,42 @@ elif side == "Lake":
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
             if Starter:
-                report.append("Today we perform routine maintenance on both ponds. An inspection was conducted to assess current conditions and maintenance needs. After the inspection,")
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
-                    "The pond basin and surrounding areas in Hidden Oaks 2 was mowed to control vegetation growth and maintain site appearance.")
+                    "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
             if Fountain_lights:
                 report.append(
                     "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
             if Fountain_Lens:
                 report.append(
                     "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "Hidden Oaks pond 1 was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
             if Motor_nonOperational:
                 report.append(
                     "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
@@ -4483,20 +5658,24 @@ elif side == "Lake":
                 report.append(
                     "The pump motor was found to be non-operational and was removed from site for further inspection.")
             if Motor_Reinstalled:
-                report.append("The motor was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level in [X] is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level in [X] is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("All visible trash/debris was collected and properly disposed of to improve site appearance.")
-            if Ending:
-                report.append("Both ponds were left in good conditions at the time of departure.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -4505,7 +5684,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Crystal Village":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Crystal Village")
             st.image(f"crystal_village.png", caption="Crystal Village", use_container_width=True)
@@ -4513,48 +5692,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("1 jug of argo (spray) - Filamentous Algae when bloom")
-                st.checkbox("1 pound and half (1 cup adn a half) of Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("1 and a half pound (1 cup and half) of Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("30 lbs. Cutrine Plus")
+            st.write("30 lbs Cutrine Gran Plus")
         elif page == "Map":
             st.subheader("Crystal Village")
             st.write("Near 2051 Raider Way, Leander, Texas 78641")
@@ -4565,24 +5767,28 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
-            Starter = st.checkbox("Starter")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
             Fountain_Lens = st.checkbox("Fountain lens")
             Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
             Motor_nonOperational = st.checkbox("Motor nonoperational")
             Motor_removal = st.checkbox("Motor removal")
             Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
-            Ending = st.checkbox("Ending")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
@@ -4590,29 +5796,42 @@ elif side == "Lake":
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
             if Starter:
-                report.append("Today we perform routine maintenance on both ponds. An inspection was conducted to assess current conditions and maintenance needs. After the inspection,")
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
-                    "The pond basin and surrounding areas in Hidden Oaks 2 was mowed to control vegetation growth and maintain site appearance.")
+                    "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
             if Fountain_lights:
                 report.append(
                     "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
             if Fountain_Lens:
                 report.append(
                     "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "Hidden Oaks pond 1 was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
             if Motor_nonOperational:
                 report.append(
                     "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
@@ -4620,20 +5839,24 @@ elif side == "Lake":
                 report.append(
                     "The pump motor was found to be non-operational and was removed from site for further inspection.")
             if Motor_Reinstalled:
-                report.append("The motor was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level in [X] is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level in [X] is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("All visible trash/debris was collected and properly disposed of to improve site appearance.")
-            if Ending:
-                report.append("Both ponds were left in good conditions at the time of departure.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -4649,7 +5872,7 @@ elif side == "Lake":
         st_folium(m)
 
     if site == "Willow's Creek":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Willow's Creek")
             st.image(f"willow_creek.png", caption="Willow's Creek", use_container_width=True)
@@ -4657,48 +5880,71 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+
             st.write("### Algae Control Treatment")
-            st.write("30 lbs of Cutrine Plus")
+            st.write("30 lbs Cutrine Gran Plus")
         elif page == "Map":
             st.write("105 Whitewing Way, Floresville, TX")
             m = folium.Map(location=[29.860380, -97.972922], zoom_start=12)
@@ -4708,50 +5954,96 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -4760,7 +6052,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Versante":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.header("Versante")
             st.subheader("Pond 1")
@@ -4778,48 +6070,72 @@ elif side == "Lake":
             st.checkbox("Pick up trash", key="pickup_trash_2")
             st.checkbox("Mow", key="mow_2")
             st.checkbox("Do any specific task for today", key="specific_task_2")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            # st.markdown("### Treatment")
+            # st.checkbox("100 lbs copper sulfate (broadcast)") #Filamentous Algae control
+            # st.checkbox("2 jugs of argos (spray)") #Filamentous Algae when bloom
+            st.subheader("Secluded Willows")
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
             st.subheader("Pond 1")
             st.write("9201 Villa Norte Dr, Austin, TX 78726")
@@ -4835,50 +6151,96 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -4887,7 +6249,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "South Grove Condominiums":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("South Grove Condominiums")
             st.image(f"south_grove.png", caption="South Grove Condominiums", use_container_width=True)
@@ -4896,46 +6258,68 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
             st.write("320 Promenade Ct, Austin, TX 78652")
             m = folium.Map(location=[30.1387111, -97.8047448], zoom_start=12)
@@ -4945,50 +6329,96 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -4997,7 +6427,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Austin East Parke HOA":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Austin East Parke HOA")
             st.image(f"austin_eastparke.png", caption="Austin East Parke HOA", use_container_width=True)
@@ -5006,46 +6436,68 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
             st.write("5504 Coolbrook Dr, Austin, TX 78724")
             m = folium.Map(location=[30.3058572, -97.6581587], zoom_start=12)
@@ -5055,50 +6507,96 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -5107,7 +6605,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Alta Vista":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.header("Alta Vista")
             st.subheader("Pond 1")
@@ -5138,48 +6636,68 @@ elif side == "Lake":
             st.checkbox("Pick up trash", key="pickup_trash_4")
             st.checkbox("Mow", key="mow_4")
             st.checkbox("Do any specific task for today", key="specific_task_4")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
             st.subheader("Pond 1")
             st.write("298 Sebastians Run, Lakeway, TX 78738")
@@ -5204,46 +6722,97 @@ elif side == "Lake":
         elif page == "Report Generator":
             st.header("Test")
 
-            #sump_clean = st.checkbox("Sump Cleaning")
+            # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
-            #if sump_clean:
-                #report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
+            # if sump_clean:
+            # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
-                report.append("The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+                report.append(
+                    "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
-                report.append("Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                report.append(
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
-                report.append("Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                report.append(
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
-                report.append("The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                report.append(
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
-                report.append("The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                report.append(
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -5252,7 +6821,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Edgewick HOA":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.subheader("Edgewick HOA (3)")
             st.image(f"edgewick_hoa.png", caption="Edgewick HOA", use_container_width=True)
@@ -5261,46 +6830,68 @@ elif side == "Lake":
             st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:", ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            #st.write("### Routine Treatment")
-            #st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
             st.write("2633 Witsome Loop, Austin, TX 78741")
             m = folium.Map(location=[30.2273486, -97.7387500], zoom_start=12)
@@ -5310,50 +6901,96 @@ elif side == "Lake":
             st.header("Test")
 
             # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
             # if sump_clean:
             # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
                 report.append(
                     "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
                 report.append(
-                    "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
                 report.append(
-                    "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
                 report.append(
-                    "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -5362,7 +6999,7 @@ elif side == "Lake":
                 st.write(final_report)
 
     if site == "Hidden Oaks at Berry Springs":
-        page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
         if page == "Tasks":
             st.header("Hidden Oaks at Berry Springs")
             st.subheader("Site 1")
@@ -5388,48 +7025,68 @@ elif side == "Lake":
             st.checkbox("Pick up trash", key="pickup_trash_3")
             st.checkbox("Mow", key="mow_3")
             st.checkbox("Do any specific task for today", key="specific_task_3")
-        elif page == "Treatment":
-            #    st.write("### Routine Treatment")
-            #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            vegetation = st.selectbox("Choose vegetation type:",
-                                      ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                       "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-            #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-            if vegetation == "Filamentous Algae":
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
                 st.image("filamentous_algae.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Argo - Spray")
-                st.checkbox("Aquathol K - spray")
-            if vegetation == "Bushy Pondweed":
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
                 st.image("bushy_pondweed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Current - Spray")
-            if vegetation == "Cattail":
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
                 st.image("cat_tail.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Arrowhead":
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
                 st.image("arrow_head.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Primrose":
+                if st.button("Arrowhead"):
+                    vegetation = "Arrowhead"
+            # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
                 st.image("prim_rose_plant.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Lily":
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
                 st.image("lily.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Phase & Aquaneat - spray")
-            if vegetation == "Alligator Weed":
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
                 st.image("alligator_weed.png", use_container_width=True)
-                st.markdown("### Treatment")
-                st.checkbox("Aquamaster - spray")
-            # st.write("### Routine Treatment")
-            # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-            if vegetation == "American Pondweed":
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
                 st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
                 st.markdown("### Treatment")
-                st.checkbox("Aquathol K")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
             st.subheader("Site 1")
             st.write("116 Fairway Ln, Georgetown, TX 78628")
@@ -5449,46 +7106,97 @@ elif side == "Lake":
         elif page == "Report Generator":
             st.header("Test")
 
-            #sump_clean = st.checkbox("Sump Cleaning")
+            # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
             Mow = st.checkbox("Mow")
             Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
             Fountain_Operational = st.checkbox("Fountain operational")
             Fountain_NonOperational = st.checkbox("Fountain non-operational")
             Fountain_Removal = st.checkbox("Fountain removal")
             Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
             Well_reading = st.checkbox("Well reading")
             Pressure_wash = st.checkbox("Pressure wash")
             Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("Water level increase")
-            Water_level_decrease = st.checkbox("Water level decrease")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
 
             report = []
 
-            #if sump_clean:
-                #report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
+            # if sump_clean:
+            # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
             if Mow:
-                report.append("The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+                report.append(
+                    "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
             if Fountain_Operational:
-                report.append("The fountain was inspected and tested and is currently fully operational.")
+                report.append(
+                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
             if Fountain_Removal:
-                report.append("Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                report.append(
+                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
             if Fountain_NonOperational:
-                report.append("Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                report.append(
+                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
             if Fountain_Reinstalled:
-                report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                report.append(
+                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
             if Chemical:
-                report.append("The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                report.append(
+                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
             if Pressure_wash:
-                report.append("The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                report.append(
+                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
             if Well_reading:
                 report.append("The well reading was inspected at -time-, with a measurement of ###.")
             if Water_level_increase:
-                report.append("The water level is [X] inches below from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
             if Water_level_decrease:
-                report.append("The water level is [X] inches above from its optimal level.")
+                report.append(
+                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
             if Trash:
-                report.append("Trash was collected and properly disposed of to improve site appearance.")
+                report.append(
+                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
 
             st.header("Generated Report")
 
@@ -5497,7 +7205,7 @@ elif side == "Lake":
                 st.write(final_report)
 
         if site == "Alta Vista":
-            page = st.radio("Select", ["Tasks", "Treatment", "Map", "Report Generator"], horizontal=True)
+            page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
             if page == "Tasks":
                 st.header("Alta Vista")
                 st.subheader("Pond 1")
@@ -5528,48 +7236,68 @@ elif side == "Lake":
                 st.checkbox("Pick up trash", key="pickup_trash_4")
                 st.checkbox("Mow", key="mow_4")
                 st.checkbox("Do any specific task for today", key="specific_task_4")
-            elif page == "Treatment":
-                #    st.write("### Routine Treatment")
-                #    st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-                vegetation = st.selectbox("Choose vegetation type:",
-                                          ["Select", "Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead",
-                                           "Primrose", "Lily", "Alligator Weed", "American Pondweed"])
-                #         vegetation = st.radio("Select vegetation type:", ["Filamentous Algae", "Bushy Pondweed", "Cattail", "Arrowhead", "Primrose", "Lily", "American Pondweed"])
-                if vegetation == "Filamentous Algae":
+            elif page == "Plant ID & Treatment":
+                vegetation = None
+                col1, col2, col3, col4 = st.columns(4)
+                with col1:
                     st.image("filamentous_algae.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.checkbox("Argo - Spray")
-                    st.checkbox("Aquathol K - spray")
-                if vegetation == "Bushy Pondweed":
+                    if st.button("Filamentous Algae"):
+                        vegetation = "Filamentous Algae"
+                with col2:
                     st.image("bushy_pondweed.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.checkbox("Current - Spray")
-                if vegetation == "Cattail":
+                    if st.button("Bushy Pondweed"):
+                        vegetation = "Bushy Pondweed"
+                with col3:
                     st.image("cat_tail.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.checkbox("Phase & Aquaneat - spray")
-                if vegetation == "Arrowhead":
+                    if st.button("Cattail"):
+                        vegetation = "Cattail"
+                with col4:
                     st.image("arrow_head.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.checkbox("Phase & Aquaneat - spray")
-                if vegetation == "Primrose":
+                    if st.button("Arrowhead"):
+                        vegetation = "Arrowhead"
+                # Row 2
+                col5, col6, col7, col8 = st.columns(4)
+                with col5:
                     st.image("prim_rose_plant.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.checkbox("Phase & Aquaneat - spray")
-                if vegetation == "Lily":
+                    if st.button("Primrose"):
+                        vegetation = "Primrose"
+                with col6:
                     st.image("lily.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.checkbox("Phase & Aquaneat - spray")
-                if vegetation == "Alligator Weed":
+                    if st.button("Lily"):
+                        vegetation = "Lily"
+                with col7:
                     st.image("alligator_weed.png", use_container_width=True)
-                    st.markdown("### Treatment")
-                    st.checkbox("Aquamaster - spray")
-                # st.write("### Routine Treatment")
-                # st.write("100 lbs (whole bag) copper sulfate (broadcast) to control filamentous algae")
-                if vegetation == "American Pondweed":
+                    if st.button("Alligator Weed"):
+                        vegetation = "Alligator Weed"
+                with col8:
                     st.image("american_weed.png", use_container_width=True)
+                    if st.button("American Pondweed"):
+                        vegetation = "American Pondweed"
+
+                if vegetation == "Filamentous Algae":
                     st.markdown("### Treatment")
-                    st.checkbox("Aquathol K")
+                    st.write("Argos - Spray")
+                elif vegetation == "Bushy Pondweed":
+                    st.markdown("### Treatment")
+                    st.write("Current - Spray")
+                elif vegetation == "Cattail":
+                    st.markdown("### Treatment")
+                    st.write("Aquaneat - Spray")
+                elif vegetation == "Arrowhead":
+                    st.markdown("### Treatment")
+                    st.write("Aquaneat - Spray")
+                elif vegetation == "Primrose":
+                    st.markdown("### Treatment")
+                    st.write("Aquaneat - Spray")
+                elif vegetation == "Lily":
+                    st.markdown("### Treatment")
+                    st.write("Aquaneat - Spray")
+                elif vegetation == "Alligator Weed":
+                    st.markdown("### Treatment")
+                    st.write("Aquamaster - Spray")
+                elif vegetation == "American Pondweed":
+                    st.markdown("### Treatment")
+                    st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
             elif page == "Map":
                 st.subheader("Pond 1")
                 st.write("298 Sebastians Run, Lakeway, TX 78738")
@@ -5599,50 +7327,96 @@ elif side == "Lake":
                 st.header("Test")
 
                 # sump_clean = st.checkbox("Sump Cleaning")
+                Starter = st.checkbox("Introduction")
                 Mow = st.checkbox("Mow")
                 Chemical = st.checkbox("Chemical")
+                Fountain_Inspection = st.checkbox("Fountain Inspection")
                 Fountain_Operational = st.checkbox("Fountain operational")
                 Fountain_NonOperational = st.checkbox("Fountain non-operational")
                 Fountain_Removal = st.checkbox("Fountain removal")
                 Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+                Fountain_Timers = st.checkbox("Fountain timers")
+                Fountain_Lens = st.checkbox("Fountain lens")
+                Fountain_lights = st.checkbox("Fountain lights")
+                Pump_Operational = st.checkbox("Pumps operational")
+                Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+                Motor_nonOperational = st.checkbox("Motor nonoperational")
+                Motor_removal = st.checkbox("Motor removal")
+                Motor_Reinstalled = st.checkbox("Motor re-installed")
                 Well_reading = st.checkbox("Well reading")
                 Pressure_wash = st.checkbox("Pressure wash")
                 Trash = st.checkbox("Trash")
-                Water_level_increase = st.checkbox("Water level increase")
-                Water_level_decrease = st.checkbox("Water level decrease")
+                Water_level_increase = st.checkbox("ABOVE optimal level")
+                Water_level_decrease = st.checkbox("BELOW optimal level")
+                End = st.checkbox("Outro")
 
                 report = []
 
                 # if sump_clean:
                 # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
 
+                if Starter:
+                    report.append("Today we perform routine maintenance and assessment on the community pond.")
                 if Mow:
                     report.append(
                         "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+                if Fountain_Inspection:
+                    report.append(
+                        "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
                 if Fountain_Operational:
-                    report.append("The fountain was inspected and tested and is currently fully operational.")
+                    report.append(
+                        "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
                 if Fountain_Removal:
                     report.append(
-                        "Upon arrival, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+                        "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
                 if Fountain_NonOperational:
                     report.append(
-                        "Upon arrival, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+                        "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
                 if Fountain_Reinstalled:
-                    report.append("The fountain was reinstalled, tested, and is fully operational at this time.")
+                    report.append(
+                        "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+                if Fountain_Timers:
+                    report.append("The fountain timers were found to be non-operational at the time of service.")
+                if Fountain_lights:
+                    report.append(
+                        "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+                if Fountain_Lens:
+                    report.append(
+                        "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+                if Pump_Operational:
+                    report.append(
+                        "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+                if Pump_Nonoperational:
+                    report.append(
+                        "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
                 if Chemical:
                     report.append(
-                        "The pond was treated with chemical to control -plant species- growth and support overall water quality.")
+                        "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+                if Motor_nonOperational:
+                    report.append(
+                        "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+                if Motor_removal:
+                    report.append(
+                        "The pump motor was found to be non-operational and was removed from site for further inspection.")
+                if Motor_Reinstalled:
+                    report.append(
+                        "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
                 if Pressure_wash:
                     report.append(
-                        "The waterfall structure was pressure washed to remove buildup debris and improve overall appearance.")
+                        "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
                 if Well_reading:
                     report.append("The well reading was inspected at -time-, with a measurement of ###.")
                 if Water_level_increase:
-                    report.append("The water level is [X] inches below from its optimal level.")
+                    report.append(
+                        "The water level was observed to be about [X] inches above the optimal level at the time of service.")
                 if Water_level_decrease:
-                    report.append("The water level is [X] inches above from its optimal level.")
+                    report.append(
+                        "The water level was observed to be about [X] inches below the optimal level at the time of service.")
                 if Trash:
-                    report.append("Trash was collected and properly disposed of to improve site appearance.")
+                    report.append(
+                        "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+                if End:
+                    report.append("The area was left in good conditions at the time of departure.")
 
                 st.header("Generated Report")
 
