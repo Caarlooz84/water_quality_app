@@ -2653,7 +2653,7 @@ elif side == "Lake":
             st.markdown("### Tasks")
             st.checkbox("Pick up trash", key="pickup_trash_4")
             st.checkbox("Mow", key="mow_4")
-            st.checkbox("Do any specific task for today", key="specific_task_4")
+            st.checkbox("Do any specific task for today", key="specific_task_4_")
         elif page == "Plant ID & Treatment":
             # st.markdown("### Treatment")
             # st.checkbox("100 lbs copper sulfate (broadcast)") #Filamentous Algae control
@@ -2899,7 +2899,7 @@ elif side == "Lake":
             st.markdown("### Tasks")
             st.checkbox("Pick up trash", key="pickup_trash_4")
             st.checkbox("Mow", key="mow_4")
-            st.checkbox("Do any specific task for today", key="specific_task_4")
+            st.checkbox("Do any specific task for today", key="Specific_task_4")
         if page == "Tasks":
             st.subheader("Pond 7")
             st.image(f"hawkes_7.png", caption="Hawkes Landing 7", use_container_width=True)
@@ -6848,7 +6848,7 @@ elif side == "Lake":
             st.markdown("### Tasks")
             st.checkbox("Pick up trash", key="pickup_trash_4")
             st.checkbox("Mow", key="mow_4")
-            st.checkbox("Do any specific task for today", key="specific_task_4")
+            st.checkbox("Do any specific task for today", key="specific_tttask_4")
         elif page == "Plant ID & Treatment":
             vegetation = None
             col1, col2, col3, col4 = st.columns(4)
@@ -7491,21 +7491,21 @@ elif side == "Lake":
                 st.markdown("### Tasks")
                 st.checkbox("Pick up trash", key="pickup_trash_4")
                 st.checkbox("Mow", key="mow_4")
-                st.checkbox("Do any specific task for today", key="specific_task_4")
+                st.checkbox("Do any specific task for today", key="specific_Task_44")
         if page == "Tasks":
                 st.subheader("Pond 5")
                 st.image(f"mayfield_5.png", caption="Mayfield 5", use_container_width=True)
                 st.markdown("### Tasks")
                 st.checkbox("Pick up trash", key="pickup_trash_5")
                 st.checkbox("Mow", key="mow_5")
-                st.checkbox("Do any specific task for today", key="specific_task_4")
+                st.checkbox("Do any specific task for today", key="specific_task_5")
         if page == "Tasks":
                 st.subheader("Pond 6")
                 st.image(f"mayfield_6.png", caption="Mayfield 6", use_container_width=True)
                 st.markdown("### Tasks")
                 st.checkbox("Pick up trash", key="pickup_trash_6")
                 st.checkbox("Mow", key="mow_6")
-                st.checkbox("Do any specific task for today", key="specific_task_4")
+                st.checkbox("Do any specific task for today", key="specific_task_6")
         elif page == "Plant ID & Treatment":
             vegetation = None
             col1, col2, col3, col4 = st.columns(4)
@@ -7745,7 +7745,7 @@ elif side == "Lake":
                 st.markdown("### Tasks")
                 st.checkbox("Pick up trash", key="pickup_trash_4")
                 st.checkbox("Mow", key="mow_4")
-                st.checkbox("Do any specific task for today", key="specific_task_4")
+                st.checkbox("Do any specific task for today", key="specific_task_44")
             elif page == "Plant ID & Treatment":
                 vegetation = None
                 col1, col2, col3, col4 = st.columns(4)
