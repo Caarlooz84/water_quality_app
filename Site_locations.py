@@ -23,10 +23,21 @@ if side == "AWF":
             st.checkbox("Backwash and rinse filter pump")
             st.checkbox("Do any specific task for today")
         elif page == "Map":
-            st.write("1205 River Terrace Dr, Georgetown, TX 78628")
-            m = folium.Map(location=[30.632489, -97.735146], zoom_start=12)
-            folium.Marker(location=[30.632489, -97.735146], popup="River View",icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st.write("1205 River Terrace Dr, Georgetown, TX 78628")
+            #m = folium.Map(location=[30.632489, -97.735146], zoom_start=12)
+            #folium.Marker(location=[30.632489, -97.735146], popup="River View",icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("River view")
+            m = folium.Map(location=[30.632489, -97.735146], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.632489, -97.735146], popup="1205 River Terrace Dr, Georgetown, TX 78628",
+                          icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Water quality levels":
             pH = st.number_input("Enter the  pH: ")
             chlorine = st.number_input("Enter TC and FC: ")
@@ -133,10 +144,21 @@ if side == "AWF":
             st.checkbox("Backwash and rinse both filter pumps")
             st.checkbox("Do any specific task for today")
         elif page == "Map":
-            st.write(f"1833-1801 Chianti Pass Canyon Lake, Texas")
-            m = folium.Map(location=[29.623099, -98.125060], zoom_start=12)
-            folium.Marker(location=[29.623099, -98.125060], popup = "Winding Creek", icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st.write(f"1833-1801 Chianti Pass Canyon Lake, Texas")
+            #m = folium.Map(location=[29.623099, -98.125060], zoom_start=12)
+            #folium.Marker(location=[29.623099, -98.125060], popup = "Winding Creek", icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Winding Creek")
+            m = folium.Map(location=[29.623099, -98.125060], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.623099, -98.125060], popup="1833-1801 Chianti Pass Canyon Lake, Texas",
+                          icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Water quality levels":
             pH = st.number_input("Enter the  pH: ")
             chlorine = st.number_input("Enter TC and FC: ")
@@ -242,10 +264,21 @@ if side == "AWF":
             st.checkbox("Backwash and rinse filter pump")
             st.checkbox("Do any specific task for today")
         elif page == "Map":
-            st.write(f"599-501 Steel Rpds, Cibolo, TX")
-            m = folium.Map(location=[29.572180, -98.218894], zoom_start=12)
-            folium.Marker(location=[29.572180, -98.218894], popup = "Steele Creek", icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st.write(f"599-501 Steel Rpds, Cibolo, TX")
+            #m = folium.Map(location=[29.572180, -98.218894], zoom_start=12)
+            #folium.Marker(location=[29.572180, -98.218894], popup = "Steele Creek", icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Steele Creek")
+            m = folium.Map(location=[29.572180, -98.218894], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.572180, -98.218894], popup="599-501 Steel Rpds, Cibolo, TX",
+                          icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Water quality levels":
             pH = st.number_input("Enter the  pH: ")
             chlorine = st.number_input("Enter TC and FC: ")
@@ -352,10 +385,21 @@ if side == "AWF":
             st.checkbox("Backwash and rinse both filter pumps")
             st.checkbox("Do any specific task for today")
         elif page == "Map":
-            st.write("214-202 Redbird Cir, San Antonio, TX")
-            m = folium.Map(location=[29.431115, -98.798014], zoom_start=12)
-            folium.Marker(location=[29.431115, -98.798014], popup = "Redbird", icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st.write("214-202 Redbird Cir, San Antonio, TX")
+            #m = folium.Map(location=[29.431115, -98.798014], zoom_start=12)
+            #folium.Marker(location=[29.431115, -98.798014], popup = "Redbird", icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Redbird")
+            m = folium.Map(location=[29.431115, -98.798014], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.431115, -98.798014], popup="214-202 Redbird Cir, San Antonio, TX",
+                          icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Water quality levels":
             pH = st.number_input("Enter the  pH: ")
             chlorine = st.number_input("Enter TC and FC: ")
@@ -460,10 +504,21 @@ if side == "AWF":
             st.checkbox("Remove debris from water feature")
             st.checkbox("Do any specific task for today")
         elif page == "Map":
-            st.write ("Alamo Pkwy, San Antonio, TX 78253")
-            m = folium.Map(location=[29.4834609, -98.7338868], zoom_start=12)
-            folium.Marker(location=[29.4834609, -98.7338868], popup = "Alamo Ranch", icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st.write ("Alamo Pkwy, San Antonio, TX 78253")
+            #m = folium.Map(location=[29.4834609, -98.7338868], zoom_start=12)
+            #folium.Marker(location=[29.4834609, -98.7338868], popup = "Alamo Ranch", icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Alamo Ranch")
+            m = folium.Map(location=[29.4834609, -98.7338868], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.4834609, -98.7338868], popup="Alamo Pkwy, San Antonio, TX 78253",
+                          icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Water quality levels":
             pH = st.number_input("Enter the  pH: ")
             chlorine = st.number_input("Enter TC and FC: ")
@@ -572,10 +627,21 @@ if side == "AWF":
             st.checkbox("Fill up all basins to their optimal water levels")
             st.checkbox("Do any specific task for today")
         elif page == "Map":
-            st.write(f"2966 Cold Spring Dr, New Braunfels, TX")
-            m = folium.Map(location=[29.7298477, -98.0750534], zoom_start=12)
-            folium.Marker(location=[29.7298477, -98.0750534], popup = "Creekside", icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st.write(f"2966 Cold Spring Dr, New Braunfels, TX")
+            #m = folium.Map(location=[29.7298477, -98.0750534], zoom_start=12)
+            #folium.Marker(location=[29.7298477, -98.0750534], popup = "Creekside", icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Creekside")
+            m = folium.Map(location=[29.7298477, -98.0750534], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.7298477, -98.0750534], popup="2966 Cold Spring Dr, New Braunfels, TX",
+                          icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Water quality levels":
             pH = st.number_input("Enter the  pH: ")
             chlorine = st.number_input("Enter TC and FC: ")
@@ -687,11 +753,22 @@ if side == "AWF":
             st.checkbox("Depending on water effects, clear out nozzles from debris")
             st.checkbox("Do any specific task for today")
         elif page == "Map":
-            st.write("17803 La Cantera Terrace #1104, San Antonio, TX 78256")
-            m = folium.Map(location=[29.6102167, -98.6057597], zoom_start=12)
-            folium.Marker(location=[29.6102167, -98.6057597], popup="Éilan",
-            icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st.write("17803 La Cantera Terrace #1104, San Antonio, TX 78256")
+            #m = folium.Map(location=[29.6102167, -98.6057597], zoom_start=12)
+            #folium.Marker(location=[29.6102167, -98.6057597], popup="Éilan",
+            #icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Éilan")
+            m = folium.Map(location=[29.6102167, -98.6057597], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.6102167, -98.6057597], popup="17803 La Cantera Terrace #1104, San Antonio, TX 78256",
+                          icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Water quality levels":
             pH = st.number_input("Enter the  pH: ")
             chlorine = st.number_input("Enter TC and FC: ")
@@ -814,17 +891,32 @@ if side == "AWF":
             st.checkbox("Backwash and rinse all filter pumps", key="backwash_pump_strain_2")
             st.checkbox("Do any specific task for today", key="specific_task_2")
         elif page == "Map":
-            st.subheader("Evans Road")
-            st.write("5149 Evans Rd, San Antonio, TX 78261")
-            m = folium.Map(location=[29.6425694, -98.3885825], zoom_start=12)
-            folium.Marker(location=[29.6425694, -98.3885825], popup="Brookestone(Evans)",
-            icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st.subheader("Evans Road")
+            #st.write("5149 Evans Rd, San Antonio, TX 78261")
+            #m = folium.Map(location=[29.6425694, -98.3885825], zoom_start=12)
+            #folium.Marker(location=[29.6425694, -98.3885825], popup="Brookestone(Evans)",
+            #icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st_folium(m)
+            #st.subheader("Boulder Flats")
+            #st.write("Boulder Flts, San Antonio, TX 78266")
+            #m = folium.Map(location=[29.6409731, -98.3820970], zoom_start=12)
+            #folium.Marker(location=[29.6409731, -98.3820970], popup="Brookestone(Boulder Flats)", icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Brookestone")
+            m = folium.Map(location=[29.6425694, -98.3885825], zoom_start=15)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.6425694, -98.3885825], popup="5149 Evans Rd, San Antonio, TX 78261",
+                          icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+            folium.Marker([29.6409731, -98.3820970], popup="Boulder Flts, San Antonio, TX 78266",
+                          icon=folium.Icon(color="blue", icon="tint")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
-            st.subheader("Boulder Flats")
-            st.write("Boulder Flts, San Antonio, TX 78266")
-            m = folium.Map(location=[29.6409731, -98.3820970], zoom_start=12)
-            folium.Marker(location=[29.6409731, -98.3820970], popup="Brookestone(Boulder Flats)", icon=folium.Icon(color="blue", icon="tint")).add_to(m)
-            st_folium(m)
+
+
+
         elif page == "Water quality levels":
             pH = st.number_input("Enter the  pH: ")
             chlorine = st.number_input("Enter TC and FC: ")
@@ -923,7 +1015,7 @@ if side == "AWF":
 
 
 elif side == "Lake":
-    site = st.selectbox("Choose pond", ["Search", "Falcon Pointe", "Berry Springs", "Hidden Oaks", "San Gabriel", "Camden Shadow Brooke", "Easton Park", "Wilder", "Blanco Vista", "Rosenbusch", "Hawkes Landing", "Lakeside Crossing", "Valley Ranch", "Red Bird Ranch", "Hunters Pond", "DR Horton", "Rhine Valley", "Whisper Falls", "Sundance Crossing", "Woods of Alon", "Cowboy Cabin", "The Willows HOA", "River Bend", "Preserve", "Green Lake", "Willow's Creek", "Wasser Ranch", "The Reserve at Lake Travis", "Crystal Village", "Versante", "South Grove Condominiums", "Austin East Parke HOA", "Edgewick HOA", "Alta Vista", "Mayfield", "Hidden Oaks at Berry Springs"])
+    site = st.selectbox("Choose pond", ["Search", "Falcon Pointe", "Berry Springs", "Hidden Oaks", "San Gabriel", "Camden Shadow Brooke", "Easton Park", "Wilder", "Blanco Vista", "Rosenbusch", "Hawkes Landing", "Valley Ranch", "Red Bird Ranch", "Hunters Pond", "DR Horton", "Rhine Valley", "Whisper Falls", "Sundance Crossing", "Woods of Alon", "Cowboy Cabin", "The Willows HOA", "River Bend", "Preserve", "Green Lake", "Willow's Creek", "Wasser Ranch", "The Reserve at Lake Travis", "Crystal Village", "Versante", "South Grove Condominiums", "Austin East Parke HOA", "Edgewick HOA", "Alta Vista", "Mayfield", "Hidden Oaks at Berry Springs"])
 
     if site == "Falcon Pointe":
         page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
@@ -1834,10 +1926,23 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("30 lbs (whole bag) Cutrine Gran Plus")
         elif page == "Map":
-            st.write("Camden Shadow Brook Apartments, Austin, Texas 78748")
-            m = folium.Map(location=[30.1724075, -97.8035975], zoom_start=12)
-            folium.Marker(location=[30.1724075, -97.8035975], popup="Camden Shadow Brooke", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.write("Camden Shadow Brook Apartments, Austin, Texas 78748")
+            #m = folium.Map(location=[30.1724075, -97.8035975], zoom_start=12)
+            #folium.Marker(location=[30.1724075, -97.8035975], popup="Camden Shadow Brooke", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Camden")
+
+            m = folium.Map(location=[30.1724075, -97.8035975], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.1724075, -97.8035975], popup="Camden Shadow Brook Apartments, Austin, Texas 78748",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -2014,10 +2119,22 @@ elif side == "Lake":
 
             st.write("### Algae Control Treatment")
             st.write("50 lbs (whole bag) copper sulfate")
+
         elif page == "Map":
+            #m = folium.Map(location=[30.157468, -97.717157], zoom_start=12)
+            #folium.Marker(location=[30.157468, -97.717157], popup="Easton Park",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
             m = folium.Map(location=[30.157468, -97.717157], zoom_start=12)
-            folium.Marker(location=[30.157468, -97.717157], popup="Easton Park",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.157468, -97.717157], popup="Easton Park - Near Bluff Springs, Austin, TX 78744",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -2194,10 +2311,22 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
-            st.write("Near 10530 Waterfowl, Adkins, TX 78101")
-            m = folium.Map(location=[29.4339995, -98.2781728], zoom_start=12)
-            folium.Marker(location=[29.4339995, -98.2781728], popup="Wilder",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.write("Near 10530 Waterfowl, Adkins, TX 78101")
+            #m = folium.Map(location=[29.4339995, -98.2781728], zoom_start=12)
+            #folium.Marker(location=[29.4339995, -98.2781728], popup="Wilder",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Wilder")
+
+            m = folium.Map(location=[29.4339995, -98.2781728], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.4339995, -98.2781728], popup="Near 10530 Waterfowl, Adkins, TX 78101",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -2376,10 +2505,22 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("100 lbs copper sulfate")
         elif page == "Map":
-            st.write("413 Lacey Oak Lp, San Marcos, TX")
-            m = folium.Map(location=[29.940703, -97.894674], zoom_start=12)
-            folium.Marker(location=[29.940703, -97.894674], popup="Blanco Vista",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.write("413 Lacey Oak Lp, San Marcos, TX")
+            #m = folium.Map(location=[29.940703, -97.894674], zoom_start=12)
+            #folium.Marker(location=[29.940703, -97.894674], popup="Blanco Vista",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Blanco Vista")
+
+            m = folium.Map(location=[29.940703, -97.894674], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.940703, -97.894674], popup="413 Lacey Oak Lp, San Marcos, TX",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -2583,26 +2724,46 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
-            st.subheader("Pond 1")
-            st.write("2090 Vis Rdg, Leander, TX 78641")
-            m = folium.Map(location=[30.5627719, -97.8817885], zoom_start=12)
-            folium.Marker(location=[30.5627719, -97.8817885], popup="Rosenbusch 1", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.subheader("Pond 1")
+            #st.write("2090 Vis Rdg, Leander, TX 78641")
+            #m = folium.Map(location=[30.5627719, -97.8817885], zoom_start=12)
+            #folium.Marker(location=[30.5627719, -97.8817885], popup="Rosenbusch 1", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+            #st.subheader("Pond 2")
+            #st.write("2090 Vis Rdg, Leander, TX 78641")
+            #m = folium.Map(location=[30.5630797, -97.8809534], zoom_start=12)
+            #folium.Marker(location=[30.5630797, -97.8809534], popup="Rosenbusch 2", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+            #st.subheader("Pond 3")
+            #st.write("324 Wildhorse St, Leander, TX 78641")
+            #m = folium.Map(location=[30.5653202, -97.8824826], zoom_start=12)
+            #folium.Marker(location=[30.5653202, -97.8824826], popup="Rosenbusch 3", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+            #st.subheader("Pond 4")
+            #st.write("Near 332-320, Eagle Cyn Dr, Leander, TX 78641")
+            #m = folium.Map(location=[30.5665506, -97.8785001], zoom_start=12)
+            #folium.Marker(location=[30.5665506, -97.8785001], popup="Rosenbusch 4", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Rosenbusch")
+
+            m = folium.Map(location=[30.5627719, -97.8817885], zoom_start=15)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.5627719, -97.8817885], popup="Rosenbusch 1 - 2090 Vis Rdg, Leander, TX 78641",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.5630797, -97.8809534], popup="Rosenbusch 2 - 2090 Vis Rdg, Leander, TX 78641",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.5653202, -97.8824826], popup="Rosenbusch 3 - 324 Wildhorse St, Leander, TX 78641",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.5665506, -97.8785001], popup="Rosenbusch 4 - Near 332-320, Eagle Cyn Dr, Leander, TX 78641",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
-            st.subheader("Pond 2")
-            st.write("2090 Vis Rdg, Leander, TX 78641")
-            m = folium.Map(location=[30.5630797, -97.8809534], zoom_start=12)
-            folium.Marker(location=[30.5630797, -97.8809534], popup="Rosenbusch 2", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            st_folium(m)
-            st.subheader("Pond 3")
-            st.write("324 Wildhorse St, Leander, TX 78641")
-            m = folium.Map(location=[30.5653202, -97.8824826], zoom_start=12)
-            folium.Marker(location=[30.5653202, -97.8824826], popup="Rosenbusch 3", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            st_folium(m)
-            st.subheader("Pond 4")
-            st.write("Near 332-320, Eagle Cyn Dr, Leander, TX 78641")
-            m = folium.Map(location=[30.5665506, -97.8785001], zoom_start=12)
-            folium.Marker(location=[30.5665506, -97.8785001], popup="Rosenbusch 4", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            st_folium(m)
+
+
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -2816,26 +2977,47 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("50 lbs (whole bag) copper sulfate")
         elif page == "Map":
-            st.subheader("Pond 1")
-            st.write("298 Sebastians Run, Lakeway, TX 78738")
-            m = folium.Map(location=[30.3381135, -97.9602324], zoom_start=12)
-            folium.Marker(location=[30.3381135, -97.9602324], popup="Alta Vista 1", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.subheader("Pond 1")
+            #st.write("298 Sebastians Run, Lakeway, TX 78738")
+            #m = folium.Map(location=[30.3381135, -97.9602324], zoom_start=12)
+            #folium.Marker(location=[30.3381135, -97.9602324], popup="Alta Vista 1", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+            #st.subheader("Pond 2")
+            #st.write("102 Lakota Pass, Lakeway, TX 78738")
+            #m = folium.Map(location=[30.3383132, -97.9555818], zoom_start=12)
+            #folium.Marker(location=[30.3383132, -97.9555818], popup="Alta Vista 2", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+            #st.subheader("Pond 3")
+            #st.write("116 Burgess Cove, Lakeway, TX 78738")
+            #m = folium.Map(location=[30.3354030, -97.9550993], zoom_start=12)
+            #folium.Marker(location=[30.3354030, -97.9550993], popup="Alta Vista 3", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+            #st.subheader("Pond 4")
+            #st.write("199 Vailco Ln, Lakeway, TX 78738")
+            #m = folium.Map(location=[30.3359224, -97.9505711], zoom_start=12)
+            #folium.Marker(location=[30.3359224, -97.9505711], popup="Alta Vista 4", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Hawkes Landing")
+
+            m = folium.Map(location=[30.5736416, -97.8837687], zoom_start=15)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.5736416, -97.8837687], popup="Hawkes Landing 1 - Near 2114-2000 Southcreek Dr, Leander, TX 78641",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.5808427, -97.8834971], popup="Hawkes Landing 4 - Near 1810 Devine Lk Pk Dr, Leander, TX 78641",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.5790880, -97.8832752], popup="Hawkes Landing 5 - Near 1934-1850 Waterfall Ave, Leander, TX 78641",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.5820957, -97.8873189], popup="Hawkes Landing 6 - Near 1933 Crystal Pond Wy, Leander, TX 78641",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.581828, -97.888098], popup="Hawkes Landing 7 - Near 941 Sunny Ridge Dr, Leander, TX 78641",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
-            st.subheader("Pond 2")
-            st.write("102 Lakota Pass, Lakeway, TX 78738")
-            m = folium.Map(location=[30.3383132, -97.9555818], zoom_start=12)
-            folium.Marker(location=[30.3383132, -97.9555818], popup="Alta Vista 2", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            st_folium(m)
-            st.subheader("Pond 3")
-            st.write("116 Burgess Cove, Lakeway, TX 78738")
-            m = folium.Map(location=[30.3354030, -97.9550993], zoom_start=12)
-            folium.Marker(location=[30.3354030, -97.9550993], popup="Alta Vista 3", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            st_folium(m)
-            st.subheader("Pond 4")
-            st.write("199 Vailco Ln, Lakeway, TX 78738")
-            m = folium.Map(location=[30.3359224, -97.9505711], zoom_start=12)
-            folium.Marker(location=[30.3359224, -97.9505711], popup="Alta Vista 4", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            st_folium(m)
+
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -2937,186 +3119,6 @@ elif side == "Lake":
                 final_report = " ".join(report)
                 st.write(final_report)
 
-    if site == "Lakeside Crossing":
-        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
-        if page == "Tasks":
-            st.subheader("Lakeside Crossing")
-            st.image(f"lakeside_crossing.png", caption="Lakeside Crossing", use_container_width=True)
-            st.markdown("### Tasks")
-            st.checkbox("Treat")
-            st.checkbox("Fountain inspection and testing")
-            st.checkbox("Pick up trash")
-            st.checkbox("Do any specific task for today")
-        elif page == "Plant ID & Treatment":
-            vegetation = None
-            col1, col2, col3, col4 = st.columns(4)
-            with col1:
-                st.image("filamentous_algae.png", use_container_width=True)
-                if st.button("Filamentous Algae"):
-                    vegetation = "Filamentous Algae"
-            with col2:
-                st.image("bushy_pondweed.png", use_container_width=True)
-                if st.button("Bushy Pondweed"):
-                    vegetation = "Bushy Pondweed"
-            with col3:
-                st.image("cat_tail.png", use_container_width=True)
-                if st.button("Cattail"):
-                    vegetation = "Cattail"
-            with col4:
-                st.image("arrow_head.png", use_container_width=True)
-                if st.button("Arrowhead"):
-                    vegetation = "Arrowhead"
-            # Row 2
-            col5, col6, col7, col8 = st.columns(4)
-            with col5:
-                st.image("prim_rose_plant.png", use_container_width=True)
-                if st.button("Primrose"):
-                    vegetation = "Primrose"
-            with col6:
-                st.image("lily.png", use_container_width=True)
-                if st.button("Lily"):
-                    vegetation = "Lily"
-            with col7:
-                st.image("alligator_weed.png", use_container_width=True)
-                if st.button("Alligator Weed"):
-                    vegetation = "Alligator Weed"
-            with col8:
-                st.image("american_weed.png", use_container_width=True)
-                if st.button("American Pondweed"):
-                    vegetation = "American Pondweed"
-
-            if vegetation == "Filamentous Algae":
-                st.markdown("### Treatment")
-                st.write("Argos - Spray")
-            elif vegetation == "Bushy Pondweed":
-                st.markdown("### Treatment")
-                st.write("Current - Spray")
-            elif vegetation == "Cattail":
-                st.markdown("### Treatment")
-                st.write("Aquaneat - Spray")
-            elif vegetation == "Arrowhead":
-                st.markdown("### Treatment")
-                st.write("Aquaneat - Spray")
-            elif vegetation == "Primrose":
-                st.markdown("### Treatment")
-                st.write("Aquaneat - Spray")
-            elif vegetation == "Lily":
-                st.markdown("### Treatment")
-                st.write("Aquaneat - Spray")
-            elif vegetation == "Alligator Weed":
-                st.markdown("### Treatment")
-                st.write("Aquamaster - Spray")
-            elif vegetation == "American Pondweed":
-                st.markdown("### Treatment")
-                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
-
-            st.write("### Algae Control Treatment")
-            st.write("50 lbs (whole bag) copper sulfate")
-        elif page == "Map":
-            st.write("229 Fountain Grove Dr, Kyle, TX")
-            m = folium.Map(location=[30.016148, -97.844254], zoom_start=12)
-            folium.Marker(location=[30.016148, -97.844254], popup="Lakeside Crossing",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            st_folium(m)
-        elif page == "Report Generator":
-            st.header("Test")
-
-            # sump_clean = st.checkbox("Sump Cleaning")
-            Starter = st.checkbox("Introduction")
-            Mow = st.checkbox("Mow")
-            Chemical = st.checkbox("Chemical")
-            Fountain_Inspection = st.checkbox("Fountain Inspection")
-            Fountain_Operational = st.checkbox("Fountain operational")
-            Fountain_NonOperational = st.checkbox("Fountain non-operational")
-            Fountain_Removal = st.checkbox("Fountain removal")
-            Fountain_Reinstalled = st.checkbox("Fountain re-installed")
-            Fountain_Timers = st.checkbox("Fountain timers")
-            Fountain_Lens = st.checkbox("Fountain lens")
-            Fountain_lights = st.checkbox("Fountain lights")
-            Pump_Operational = st.checkbox("Pumps operational")
-            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
-            Motor_nonOperational = st.checkbox("Motor nonoperational")
-            Motor_removal = st.checkbox("Motor removal")
-            Motor_Reinstalled = st.checkbox("Motor re-installed")
-            Well_reading = st.checkbox("Well reading")
-            Pressure_wash = st.checkbox("Pressure wash")
-            Trash = st.checkbox("Trash")
-            Water_level_increase = st.checkbox("ABOVE optimal level")
-            Water_level_decrease = st.checkbox("BELOW optimal level")
-            End = st.checkbox("Outro")
-
-            report = []
-
-            # if sump_clean:
-            # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
-
-            if Starter:
-                report.append("Today we perform routine maintenance and assessment on the community pond.")
-            if Mow:
-                report.append(
-                    "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
-            if Fountain_Inspection:
-                report.append(
-                    "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
-            if Fountain_Operational:
-                report.append(
-                    "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
-            if Fountain_Removal:
-                report.append(
-                    "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
-            if Fountain_NonOperational:
-                report.append(
-                    "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
-            if Fountain_Reinstalled:
-                report.append(
-                    "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
-            if Fountain_Timers:
-                report.append("The fountain timers were found to be non-operational at the time of service.")
-            if Fountain_lights:
-                report.append(
-                    "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
-            if Fountain_Lens:
-                report.append(
-                    "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
-            if Pump_Operational:
-                report.append(
-                    "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
-            if Pump_Nonoperational:
-                report.append(
-                    "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
-            if Chemical:
-                report.append(
-                    "Treatment was performed for -plant species- growth observed forming throughout the pond.")
-            if Motor_nonOperational:
-                report.append(
-                    "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
-            if Motor_removal:
-                report.append(
-                    "The pump motor was found to be non-operational and was removed from site for further inspection.")
-            if Motor_Reinstalled:
-                report.append(
-                    "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
-            if Pressure_wash:
-                report.append(
-                    "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
-            if Well_reading:
-                report.append("The well reading was inspected at -time-, with a measurement of ###.")
-            if Water_level_increase:
-                report.append(
-                    "The water level was observed to be about [X] inches above the optimal level at the time of service.")
-            if Water_level_decrease:
-                report.append(
-                    "The water level was observed to be about [X] inches below the optimal level at the time of service.")
-            if Trash:
-                report.append(
-                    "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
-            if End:
-                report.append("The area was left in good conditions at the time of departure.")
-
-            st.header("Generated Report")
-
-            if report:
-                final_report = " ".join(report)
-                st.write(final_report)
 
     if site == "Valley Ranch":
         page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
@@ -3372,10 +3374,21 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("100 lbs copper sulfate")
         elif page == "Map":
-                st.write("163 Garden Emerald, San Antonio, Texas 78253")
+                #st.write("163 Garden Emerald, San Antonio, Texas 78253")
+                #m = folium.Map(location=[29.4387324, -98.8065347], zoom_start=12)
+                #folium.Marker(location=[29.4387324, -98.8065347], popup="Red Bird Ranch", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+                #st_folium(m)
+
+                st.subheader("Red Bird Ranch")
                 m = folium.Map(location=[29.4387324, -98.8065347], zoom_start=12)
-                folium.Marker(location=[29.4387324, -98.8065347], popup="Red Bird Ranch", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+                folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+                folium.Marker([29.4387324, -98.8065347], popup="163 Garden Emerald, San Antonio, Texas 78253",
+                              icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+                folium.LayerControl().add_to(m)
                 st_folium(m)
+
         elif page == "Report Generator":
                 st.header("Test")
 
@@ -3552,10 +3565,21 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("50 lbs copper sulfate")
         elif page == "Map":
-            st.write("9942 Hunters Pond, San Antonio, TX")
+            #st.write("9942 Hunters Pond, San Antonio, TX")
+            #m = folium.Map(location=[29.317733, -98.543061], zoom_start=12)
+            #folium.Marker(location=[29.317733, -98.543061], popup="Hunters Pond", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Hunters Pond")
             m = folium.Map(location=[29.317733, -98.543061], zoom_start=12)
-            folium.Marker(location=[29.317733, -98.543061], popup="Hunters Pond", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.317733, -98.543061], popup="9942 Hunters Pond, San Antonio, TX",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -3734,10 +3758,21 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("50 lbs copper sulfate")
         elif page == "Map":
-            st.write("Near D.R. Horton San Antonio Division Office, San Antonio, TX")
+            #st.write("Near D.R. Horton San Antonio Division Office, San Antonio, TX")
+            #m = folium.Map(location=[29.603528, -98.382056], zoom_start=12)
+            #folium.Marker(location=[29.603528, -98.382056], popup="DR Horton", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("DR Horton")
             m = folium.Map(location=[29.603528, -98.382056], zoom_start=12)
-            folium.Marker(location=[29.603528, -98.382056], popup="DR Horton", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.603528, -98.382056], popup="Near D.R. Horton San Antonio Division Office, San Antonio, TX",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -3914,10 +3949,21 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("100 lbs copper sulfate")
         elif page == "Map":
-            st.write("9984 Sarrebourg Street, Schertz, TX")
-            m = folium.Map(location=[29.5269856, -98.2348819], zoom_start=12)
-            folium.Marker(location=[29.5269856, -98.2348819], popup="two sites", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.write("9984 Sarrebourg Street, Schertz, TX")
+            #m = folium.Map(location=[29.5269856, -98.2348819], zoom_start=12)
+            #folium.Marker(location=[29.5269856, -98.2348819], popup="two sites", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Rhine Valley")
+            m = folium.Map(location=[29.5269856, -98.2348819], zoom_start=16)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.5269856, -98.2348819], popup="9984 Sarrebourg Street, Schertz, TX",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -4109,10 +4155,21 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("50 lbs Copper Sulfate")
         elif page == "Map":
-            st.write("13125 Tremolo Echo, San Antonio, TX")
-            m = folium.Map(location=[29.372891, -98.753637], zoom_start=12)
-            folium.Marker(location=[29.372891, -98.753637], popup="Whisper Falls", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.write("13125 Tremolo Echo, San Antonio, TX")
+            #m = folium.Map(location=[29.372891, -98.753637], zoom_start=12)
+            #folium.Marker(location=[29.372891, -98.753637], popup="Whisper Falls", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Whisper Falls")
+            m = folium.Map(location=[29.372891, -98.753637], zoom_start=16)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.372891, -98.753637], popup="13125 Tremolo Echo, San Antonio, TX",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -4302,16 +4359,29 @@ elif side == "Lake":
             st.subheader("Site 3")
             st.image(f"sundance_crossing3.png", caption="Sundance Crossing 3", use_container_width=True)
         elif page == "Map":
-            st.subheader("Site 1 and 2")
-            st.write("12105 Western Mail Wy, Austin, TX")
-            m = folium.Map(location=[30.1653377, -97.634716], zoom_start=12)
-            folium.Marker(location=[30.1653377, -97.634716], popup="Sundance Crossing", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.subheader("Site 1 and 2")
+            #st.write("12105 Western Mail Wy, Austin, TX")
+            #m = folium.Map(location=[30.1653377, -97.634716], zoom_start=12)
+            #folium.Marker(location=[30.1653377, -97.634716], popup="Sundance Crossing", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+            #st.subheader("Site 3")
+            #st.write("6516 Albany Sleigh Dr, Austin, TX")
+            #m = folium.Map(location=[30.162739, -97.633859], zoom_start=12)
+            #folium.Marker(location=[30.162739, -97.633859], popup="Sundance Crossing", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Sundance Crossing")
+            m = folium.Map(location=[30.1653377, -97.634716], zoom_start=15)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.1653377, -97.634716], popup="Site 1 and 2 - 12105 Western Mail Wy, Austin, TX",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.162739, -97.633859], popup="Site 3 - 6516 Albany Sleigh Dr, Austin, TX",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
-            st.subheader("Site 3")
-            st.write("6516 Albany Sleigh Dr, Austin, TX")
-            m = folium.Map(location=[30.162739, -97.633859], zoom_start=12)
-            folium.Marker(location=[30.162739, -97.633859], popup="Sundance Crossing", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -4489,10 +4559,21 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("30 lbs Cutrine Gran Plus")
         elif page == "Map":
-            st.write("2906 Zurich, San Antonio, Texas 78230")
-            m = folium.Map(location=[29.549143, -98.534438], zoom_start=12)
-            folium.Marker(location=[29.549143, -98.534438], popup="Woods of Alon", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.write("2906 Zurich, San Antonio, Texas 78230")
+            #m = folium.Map(location=[29.549143, -98.534438], zoom_start=12)
+            #folium.Marker(location=[29.549143, -98.534438], popup="Woods of Alon", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Woods of Alon")
+            m = folium.Map(location=[29.549143, -98.534438], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.549143, -98.534438], popup="2906 Zurich, San Antonio, Texas 78230",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -4672,10 +4753,21 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("30 lbs Cutrine Gran Plus")
         elif page == "Map":
-            st.write("10281 FM 20, Lockhart, TX")
-            m = folium.Map(location=[29.786919, -97.734721], zoom_start=12)
-            folium.Marker(location=[29.786919, -97.734721], popup="Cowboy Cabin", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.write("10281 FM 20, Lockhart, TX")
+            #m = folium.Map(location=[29.786919, -97.734721], zoom_start=12)
+            #folium.Marker(location=[29.786919, -97.734721], popup="Cowboy Cabin", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Cowboy Cabin")
+            m = folium.Map(location=[29.786919, -97.734721], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.786919, -97.734721], popup="10281 FM 20, Lockhart, TX",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -4852,10 +4944,21 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("100 lbs copper sulfate")
         elif page == "Map":
-            st.write("4985 Lakeshore Dr, Killeen, TX")
-            m = folium.Map(location=[31.086025, -97.680181], zoom_start=12)
-            folium.Marker(location=[31.086025, -97.680181], popup="The Willows HOA", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.write("4985 Lakeshore Dr, Killeen, TX")
+            #m = folium.Map(location=[31.086025, -97.680181], zoom_start=12)
+            #folium.Marker(location=[31.086025, -97.680181], popup="The Willows HOA", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("The Willows HOA")
+            m = folium.Map(location=[31.086025, -97.680181], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([31.086025, -97.680181], popup="4985 Lakeshore Dr, Killeen, TX",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -5032,10 +5135,21 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("30 lbs copper sulfate")
         elif page == "Map":
-            st.write("105 Whitewing Way, Floresville, TX")
-            m = folium.Map(location=[29.156680, -98.182802], zoom_start=12)
-            folium.Marker(location=[29.156680, -98.182802], popup="River Bend", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.write("105 Whitewing Way, Floresville, TX")
+            #m = folium.Map(location=[29.156680, -98.182802], zoom_start=12)
+            #folium.Marker(location=[29.156680, -98.182802], popup="River Bend", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("River Bend")
+            m = folium.Map(location=[29.156680, -98.182802], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.156680, -98.182802], popup="105 Whitewing Way, Floresville, TX",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -5213,10 +5327,21 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("50 lbs copper sulfate")
         elif page == "Map":
-            st.write("Near New Braunfels, TX 78132")
-            m = folium.Map(location=[29.7099256, -98.1997875], zoom_start=12)
-            folium.Marker(location=[29.7099256, -98.1997875], popup="Preserve", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.write("Near New Braunfels, TX 78132")
+            #m = folium.Map(location=[29.7099256, -98.1997875], zoom_start=12)
+            #folium.Marker(location=[29.7099256, -98.1997875], popup="Preserve", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Preserve")
+            m = folium.Map(location=[29.7099256, -98.1997875], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.7099256, -98.1997875], popup="Near New Braunfels, TX 78132",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -5395,11 +5520,22 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("50 lbs copper sulfate")
         elif page == "Map":
+            #st.subheader("Wasser Ranch")
+            #st.write("630 Pader, New Braunfels, Texas 78130")
+            #m = folium.Map(location=[29.7502488, -98.073824], zoom_start=12)
+            #folium.Marker(location=[29.7502488, -98.073824], popup="Wasser Ranch",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
             st.subheader("Wasser Ranch")
-            st.write("630 Pader, New Braunfels, Texas 78130")
-            m = folium.Map(location=[29.7502488, -98.073824], zoom_start=12)
-            folium.Marker(location=[29.7502488, -98.073824], popup="Wasser Ranch",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            m = folium.Map(location=[29.7502488, -98.073824], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.7502488, -98.073824], popup="630 Pader, New Braunfels, Texas 78130",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -5577,11 +5713,22 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("30 lbs Cutrine Gran Plus")
         elif page == "Map":
+            #st.subheader("The Reserve at Lake Travis")
+            #st.write("The Reserve At Lake Travis, Briarcliff, TX 78669")
+            #m = folium.Map(location=[30.4086077, -97.9965388], zoom_start=12)
+            #folium.Marker(location=[30.4086077, -97.9965388], popup="The Reserve at Lake Travis",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
             st.subheader("The Reserve at Lake Travis")
-            st.write("The Reserve At Lake Travis, Briarcliff, TX 78669")
-            m = folium.Map(location=[30.4086077, -97.9965388], zoom_start=12)
-            folium.Marker(location=[30.4086077, -97.9965388], popup="The Reserve at Lake Travis",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            m = folium.Map(location=[30.4086077, -97.9965388], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.4086077, -97.9965388], popup="The Reserve At Lake Travis, Briarcliff, TX 78669",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -5758,11 +5905,22 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("30 lbs Cutrine Gran Plus")
         elif page == "Map":
+            #st.subheader("Crystal Village")
+            #st.write("Near 2051 Raider Way, Leander, Texas 78641")
+            #m = folium.Map(location=[30.5599216, -97.8209852], zoom_start=12)
+            #folium.Marker(location=[30.5599216, -97.8209852], popup="Crystal Village",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
             st.subheader("Crystal Village")
-            st.write("Near 2051 Raider Way, Leander, Texas 78641")
-            m = folium.Map(location=[30.5599216, -97.8209852], zoom_start=12)
-            folium.Marker(location=[30.5599216, -97.8209852], popup="Crystal Village",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            m = folium.Map(location=[30.5599216, -97.8209852], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.5599216, -97.8209852], popup="Near 2051 Raider Way, Leander, Texas 78641",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -5867,8 +6025,18 @@ elif side == "Lake":
     if site == "Green Lake":
         page = st.radio("Select", ["Tasks", "Treatment", "Map"], horizontal=True)
 
-        m = folium.Map(location=[29.309109, -98.386129], zoom_start=12)
-        folium.Marker(location=[29.309109, -98.386129], popup="Green Lake",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+        #m = folium.Map(location=[29.309109, -98.386129], zoom_start=12)
+        #folium.Marker(location=[29.309109, -98.386129], popup="Green Lake",icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+        #st_folium(m)
+
+        st.subheader("Green Lake")
+        m = folium.Map(location=[29.309109, -98.386129], zoom_start=17)
+        folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+        folium.Marker([29.309109, -98.386129], popup="---",
+                      icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+        folium.LayerControl().add_to(m)
         st_folium(m)
 
     if site == "Willow's Creek":
@@ -5946,10 +6114,21 @@ elif side == "Lake":
             st.write("### Algae Control Treatment")
             st.write("30 lbs Cutrine Gran Plus")
         elif page == "Map":
-            st.write("105 Whitewing Way, Floresville, TX")
-            m = folium.Map(location=[29.860380, -97.972922], zoom_start=12)
-            folium.Marker(location=[29.860380, -97.972922], popup="Willow Creek", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.write("105 Whitewing Way, Floresville, TX")
+            #m = folium.Map(location=[29.860380, -97.972922], zoom_start=12)
+            #folium.Marker(location=[29.860380, -97.972922], popup="Willow Creek", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Willow Creek")
+            m = folium.Map(location=[29.860380, -97.972922], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([29.860380, -97.972922], popup="105 Whitewing Way, Floresville, TX",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -6137,16 +6316,29 @@ elif side == "Lake":
                 st.markdown("### Treatment")
                 st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
-            st.subheader("Pond 1")
-            st.write("9201 Villa Norte Dr, Austin, TX 78726")
-            m = folium.Map(location=[30.4317645, -97.8443623], zoom_start=12)
-            folium.Marker(location=[30.4317645, -97.8443623], popup="Versante 1", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.subheader("Pond 1")
+            #st.write("9201 Villa Norte Dr, Austin, TX 78726")
+            #m = folium.Map(location=[30.4317645, -97.8443623], zoom_start=12)
+            #folium.Marker(location=[30.4317645, -97.8443623], popup="Versante 1", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+            #st.subheader("Pond 2")
+            #st.write("Near 12000 Terraza Cir, Austin, TX 78726")
+            #m = folium.Map(location=[30.4290936, -97.8455958], zoom_start=12)
+            #folium.Marker(location=[30.4290936, -97.8455958], popup="Versante 2", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Versante")
+            m = folium.Map(location=[30.4317645, -97.8443623], zoom_start=15)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.4317645, -97.8443623], popup="Pond 1 - 9201 Villa Norte Dr, Austin, TX 78726",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.4290936, -97.8455958], popup="Pond 2 - Near 12000 Terraza Cir, Austin, TX 78726",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
-            st.subheader("Pond 2")
-            st.write("Near 12000 Terraza Cir, Austin, TX 78726")
-            m = folium.Map(location=[30.4290936, -97.8455958], zoom_start=12)
-            folium.Marker(location=[30.4290936, -97.8455958], popup="Versante 2", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -6255,7 +6447,6 @@ elif side == "Lake":
             st.image(f"south_grove.png", caption="South Grove Condominiums", use_container_width=True)
             st.markdown("### Tasks")
             st.checkbox("Mow")
-            st.checkbox("Treat")
             st.checkbox("Pick up trash")
             st.checkbox("Do any specific task for today")
         elif page == "Plant ID & Treatment":
@@ -6321,10 +6512,21 @@ elif side == "Lake":
                 st.markdown("### Treatment")
                 st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
-            st.write("320 Promenade Ct, Austin, TX 78652")
-            m = folium.Map(location=[30.1387111, -97.8047448], zoom_start=12)
-            folium.Marker(location=[30.1387111, -97.8047448], popup="South Grove Condominiums", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.write("320 Promenade Ct, Austin, TX 78652")
+            #m = folium.Map(location=[30.1387111, -97.8047448], zoom_start=12)
+            #folium.Marker(location=[30.1387111, -97.8047448], popup="South Grove Condominiums", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("South Grove Condominiums")
+            m = folium.Map(location=[30.1387111, -97.8047448], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.1387111, -97.8047448], popup="320 Promenade Ct, Austin, TX 78652",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -6499,10 +6701,21 @@ elif side == "Lake":
                 st.markdown("### Treatment")
                 st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
-            st.write("5504 Coolbrook Dr, Austin, TX 78724")
-            m = folium.Map(location=[30.3058572, -97.6581587], zoom_start=12)
-            folium.Marker(location=[30.3058572, -97.6581587], popup="Austin East Parke HOA", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.write("5504 Coolbrook Dr, Austin, TX 78724")
+            #m = folium.Map(location=[30.3058572, -97.6581587], zoom_start=12)
+            #folium.Marker(location=[30.3058572, -97.6581587], popup="Austin East Parke HOA", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Austin East Parke HOA")
+            m = folium.Map(location=[30.3058572, -97.6581587], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.3058572, -97.6581587], popup="5504 Coolbrook Dr, Austin, TX 78724",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -6699,26 +6912,42 @@ elif side == "Lake":
                 st.markdown("### Treatment")
                 st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
-            st.subheader("Pond 1")
-            st.write("298 Sebastians Run, Lakeway, TX 78738")
-            m = folium.Map(location=[30.3381135, -97.9602324], zoom_start=12)
-            folium.Marker(location=[30.3381135, -97.9602324], popup="Alta Vista 1", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.subheader("Alta Vista")
+            #st.write("298 Sebastians Run, Lakeway, TX 78738")
+            #m = folium.Map(location=[30.3381135, -97.9602324], zoom_start=12)
+            #folium.Marker(location=[30.3381135, -97.9602324], popup="Alta Vista 1", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+            #st.subheader("Pond 2")
+            #st.write("102 Lakota Pass, Lakeway, TX 78738")
+            #m = folium.Map(location=[30.3383132, -97.9555818], zoom_start=12)
+            #folium.Marker(location=[30.3383132, -97.9555818], popup="Alta Vista 2", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+            #st.subheader("Pond 3")
+            #st.write("116 Burgess Cove, Lakeway, TX 78738")
+            #m = folium.Map(location=[30.3354030, -97.9550993], zoom_start=12)
+            #folium.Marker(location=[30.3354030, -97.9550993], popup="Alta Vista 3", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+            #st.subheader("Pond 4")
+            #st.write("199 Vailco Ln, Lakeway, TX 78738")
+            #m = folium.Map(location=[30.3359224, -97.9505711], zoom_start=12)
+            #folium.Marker(location=[30.3359224, -97.9505711], popup="Alta Vista 4", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            m = folium.Map(location=[30.33, -97.95], zoom_start=12)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.3381135, -97.9602324], popup="Alta Vista 1 - 298 Sebastians Run, Lakeway, TX 78738",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.3383132, -97.9555818], popup="Alta Vista 2 - 102 Lakota Pass, Lakeway, TX 78738",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.3354030, -97.9550993], popup="Alta Vista 3 - 116 Burgess Cove, Lakeway, TX 78738",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.3359224, -97.9505711], popup="Alta Vista 4 - 199 Vailco Ln, Lakeway, TX 78738",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
-            st.subheader("Pond 2")
-            st.write("102 Lakota Pass, Lakeway, TX 78738")
-            m = folium.Map(location=[30.3383132, -97.9555818], zoom_start=12)
-            folium.Marker(location=[30.3383132, -97.9555818], popup="Alta Vista 2", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            st_folium(m)
-            st.subheader("Pond 3")
-            st.write("116 Burgess Cove, Lakeway, TX 78738")
-            m = folium.Map(location=[30.3354030, -97.9550993], zoom_start=12)
-            folium.Marker(location=[30.3354030, -97.9550993], popup="Alta Vista 3", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            st_folium(m)
-            st.subheader("Pond 4")
-            st.write("199 Vailco Ln, Lakeway, TX 78738")
-            m = folium.Map(location=[30.3359224, -97.9505711], zoom_start=12)
-            folium.Marker(location=[30.3359224, -97.9505711], popup="Alta Vista 4", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -6893,10 +7122,22 @@ elif side == "Lake":
                 st.markdown("### Treatment")
                 st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
-            st.write("2633 Witsome Loop, Austin, TX 78741")
-            m = folium.Map(location=[30.2273486, -97.7387500], zoom_start=12)
-            folium.Marker(location=[30.2273486, -97.7387500], popup="Edgewick HOA", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.write("2633 Witsome Loop, Austin, TX 78741")
+            #m = folium.Map(location=[30.2273486, -97.7387500], zoom_start=12)
+            #folium.Marker(location=[30.2273486, -97.7387500], popup="Edgewick HOA", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Edgewick HOA")
+            m = folium.Map(location=[30.2273486, -97.7387500], zoom_start=17)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.2273486, -97.7387500], popup="2633 Witsome Loop, Austin, TX 78741",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
+
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -7088,21 +7329,36 @@ elif side == "Lake":
                 st.markdown("### Treatment")
                 st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
         elif page == "Map":
-            st.subheader("Site 1")
-            st.write("116 Fairway Ln, Georgetown, TX 78628")
-            m = folium.Map(location=[30.7163279, -97.6690273], zoom_start=12)
-            folium.Marker(location=[30.7163279, -97.6690273], popup="Hidden Oaks at Berry Springs 1", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st.subheader("Site 1")
+            #st.write("116 Fairway Ln, Georgetown, TX 78628")
+            #m = folium.Map(location=[30.7163279, -97.6690273], zoom_start=12)
+            #folium.Marker(location=[30.7163279, -97.6690273], popup="Hidden Oaks at Berry Springs 1", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+            #st.subheader("Site 2")
+            #st.write("217 Tovas Secret Cv, Georgetown, TX 78628")
+            #m = folium.Map(location=[30.7157857, -97.6700674], zoom_start=12)
+            #folium.Marker(location=[30.7157857, -97.6700674], popup="Hidden Oaks at Berry Springs 2", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+            #st.subheader("Site 3")
+            #st.write("Near 109 Stately Oak Dr, Georgetown, TX 78628")
+            #m = folium.Map(location=[30.7164853, -97.6706776], zoom_start=12)
+            #folium.Marker(location=[30.7164853, -97.6706776], popup="Hidden Oaks at Berry Springs 3", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            #st_folium(m)
+
+            st.subheader("Hidden Oaks at Berry Springs")
+            m = folium.Map(location=[30.7163279, -97.6690273], zoom_start=15)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.7163279, -97.6690273], popup="116 Fairway Ln, Georgetown, TX 78628",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.7157857, -97.6700674], popup="217 Tovas Secret Cv, Georgetown, TX 78628",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.7164297, -97.6704318], popup="Near 105 Monterey Oak Trl, Georgetown, TX 78628",
+                          icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
             st_folium(m)
-            st.subheader("Site 2")
-            st.write("217 Tovas Secret Cv, Georgetown, TX 78628")
-            m = folium.Map(location=[30.7157857, -97.6700674], zoom_start=12)
-            folium.Marker(location=[30.7157857, -97.6700674], popup="Hidden Oaks at Berry Springs 2", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            st_folium(m)
-            st.subheader("Site 3")
-            st.write("Near 109 Stately Oak Dr, Georgetown, TX 78628")
-            m = folium.Map(location=[30.7164853, -97.6706776], zoom_start=12)
-            folium.Marker(location=[30.7164853, -97.6706776], popup="Hidden Oaks at Berry Springs 3", icon=folium.Icon(color="green", icon="leaf")).add_to(m)
-            st_folium(m)
+
         elif page == "Report Generator":
             st.header("Test")
 
@@ -7195,6 +7451,260 @@ elif side == "Lake":
             if Trash:
                 report.append(
                     "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
+            if End:
+                report.append("The area was left in good conditions at the time of departure.")
+
+            st.header("Generated Report")
+
+            if report:
+                final_report = " ".join(report)
+                st.write(final_report)
+
+    if site == "Mayfield":
+        page = st.radio("Select", ["Tasks", "Plant ID & Treatment", "Map", "Report Generator"], horizontal=True)
+        if page == "Tasks":
+                st.header("Mayfield")
+                st.subheader("Pond 1")
+                st.image(f"mayfield_1.png", caption="Mayfield 1", use_container_width=True)
+                st.markdown("### Tasks")
+                st.checkbox("Treat")
+                st.checkbox("Pick up trash", key="pickup_trash_1")
+                st.checkbox("Mow", key="mow_1")
+                st.checkbox("Do any specific task for today", key="specific_task_1")
+        if page == "Tasks":
+                st.subheader("Pond 2")
+                st.image(f"mayfield_2.png", caption="Mayfield 2", use_container_width=True)
+                st.markdown("### Tasks")
+                st.checkbox("Pick up trash", key="pickup_trash_2")
+                st.checkbox("Mow", key="mow_2")
+                st.checkbox("Do any specific task for today", key="specific_task_2")
+        if page == "Tasks":
+                st.subheader("Pond 3")
+                st.image(f"mayfield_3.png", caption="Mayfield 3", use_container_width=True)
+                st.markdown("### Tasks")
+                st.checkbox("Pick up trash", key="pickup_trash_3")
+                st.checkbox("Mow", key="mow_3")
+                st.checkbox("Do any specific task for today", key="specific_task_3")
+        if page == "Tasks":
+                st.subheader("Pond 4")
+                st.image(f"mayfield_4.png", caption="Mayfield 4", use_container_width=True)
+                st.markdown("### Tasks")
+                st.checkbox("Pick up trash", key="pickup_trash_4")
+                st.checkbox("Mow", key="mow_4")
+                st.checkbox("Do any specific task for today", key="specific_task_4")
+        if page == "Tasks":
+                st.subheader("Pond 5")
+                st.image(f"mayfield_5.png", caption="Mayfield 5", use_container_width=True)
+                st.markdown("### Tasks")
+                st.checkbox("Pick up trash", key="pickup_trash_5")
+                st.checkbox("Mow", key="mow_5")
+                st.checkbox("Do any specific task for today", key="specific_task_4")
+        if page == "Tasks":
+                st.subheader("Pond 6")
+                st.image(f"mayfield_6.png", caption="Mayfield 6", use_container_width=True)
+                st.markdown("### Tasks")
+                st.checkbox("Pick up trash", key="pickup_trash_6")
+                st.checkbox("Mow", key="mow_6")
+                st.checkbox("Do any specific task for today", key="specific_task_4")
+        elif page == "Plant ID & Treatment":
+            vegetation = None
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
+                st.image("filamentous_algae.png", use_container_width=True)
+                if st.button("Filamentous Algae"):
+                    vegetation = "Filamentous Algae"
+            with col2:
+                st.image("bushy_pondweed.png", use_container_width=True)
+                if st.button("Bushy Pondweed"):
+                    vegetation = "Bushy Pondweed"
+            with col3:
+                st.image("cat_tail.png", use_container_width=True)
+                if st.button("Cattail"):
+                    vegetation = "Cattail"
+            with col4:
+                st.image("arrow_head.png", use_container_width=True)
+                if st.button("Arrowhead"):
+                        vegetation = "Arrowhead"
+                # Row 2
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.image("prim_rose_plant.png", use_container_width=True)
+                if st.button("Primrose"):
+                    vegetation = "Primrose"
+            with col6:
+                st.image("lily.png", use_container_width=True)
+                if st.button("Lily"):
+                    vegetation = "Lily"
+            with col7:
+                st.image("alligator_weed.png", use_container_width=True)
+                if st.button("Alligator Weed"):
+                    vegetation = "Alligator Weed"
+            with col8:
+                st.image("american_weed.png", use_container_width=True)
+                if st.button("American Pondweed"):
+                    vegetation = "American Pondweed"
+
+            if vegetation == "Filamentous Algae":
+                st.markdown("### Treatment")
+                st.write("Argos - Spray")
+            elif vegetation == "Bushy Pondweed":
+                st.markdown("### Treatment")
+                st.write("Current - Spray")
+            elif vegetation == "Cattail":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Arrowhead":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Primrose":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Lily":
+                st.markdown("### Treatment")
+                st.write("Aquaneat - Spray")
+            elif vegetation == "Alligator Weed":
+                st.markdown("### Treatment")
+                st.write("Aquamaster - Spray")
+            elif vegetation == "American Pondweed":
+                st.markdown("### Treatment")
+                st.write("Aquathol K Liquid - Spray or Aquathol K Granular - Broadcast")
+        elif page == "Map":
+                #st.subheader("Pond 1")
+                #st.write("298 Sebastians Run, Lakeway, TX 78738")
+                #m = folium.Map(location=[30.3381135, -97.9602324], zoom_start=12)
+                #folium.Marker(location=[30.3381135, -97.9602324], popup="Alta Vista 1",
+                 #             icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+                #st_folium(m)
+                #st.subheader("Pond 2")
+                #st.write("102 Lakota Pass, Lakeway, TX 78738")
+                #m = folium.Map(location=[30.3383132, -97.9555818], zoom_start=12)
+                #folium.Marker(location=[30.3383132, -97.9555818], popup="Alta Vista 2",
+                 #             icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+                #st_folium(m)
+                #st.subheader("Pond 3")
+                #st.write("116 Burgess Cove, Lakeway, TX 78738")
+                #m = folium.Map(location=[30.3354030, -97.9550993], zoom_start=12)
+                #folium.Marker(location=[30.3354030, -97.9550993], popup="Alta Vista 3",
+                 #             icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+                #st_folium(m)
+                #st.subheader("Pond 4")
+                #st.write("199 Vailco Ln, Lakeway, TX 78738")
+                #m = folium.Map(location=[30.3359224, -97.9505711], zoom_start=12)
+                #folium.Marker(location=[30.3359224, -97.9505711], popup="Alta Vista 4",
+                 #             icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            st.subheader("Hidden Oaks at Berry Springs")
+            m = folium.Map(location=[30.5518496, -97.7462126], zoom_start=15)
+            folium.TileLayer("Esri.WorldImagery").add_to(m)
+
+            folium.Marker([30.5518496, -97.7462126], popup="Pond 1 - 3604 Cerulean Way, Round Rock, TX 78681",
+                              icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.5544271, -97.7391527], popup="Pond 2 - 3612 Pine Needle Cir, Round Rock, TX 78681",
+                              icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.5565310, -97.7407094], popup="Pond 3 - 3632 Fossilwood Way, Round Rock, TX 78628",
+                              icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.5600492, -97.7541841], popup="Pond 4 - 3800 Sapphire Ct, Round Rock, TX 78628",
+                              icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.5575227, -97.7532685], popup="Pond 5 - 4008 Massey Way, Round Rock, TX 78628",
+                              icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+            folium.Marker([30.5591995, -97.7499415], popup="Pond 6 - 3835 Lagoona Dr, Round Rock, TX 78628",
+                              icon=folium.Icon(color="green", icon="leaf")).add_to(m)
+
+            folium.LayerControl().add_to(m)
+            st_folium(m)
+
+        elif page == "Report Generator":
+            st.header("Test")
+
+                # sump_clean = st.checkbox("Sump Cleaning")
+            Starter = st.checkbox("Introduction")
+            Mow = st.checkbox("Mow")
+            Chemical = st.checkbox("Chemical")
+            Fountain_Inspection = st.checkbox("Fountain Inspection")
+            Fountain_Operational = st.checkbox("Fountain operational")
+            Fountain_NonOperational = st.checkbox("Fountain non-operational")
+            Fountain_Removal = st.checkbox("Fountain removal")
+            Fountain_Reinstalled = st.checkbox("Fountain re-installed")
+            Fountain_Timers = st.checkbox("Fountain timers")
+            Fountain_Lens = st.checkbox("Fountain lens")
+            Fountain_lights = st.checkbox("Fountain lights")
+            Pump_Operational = st.checkbox("Pumps operational")
+            Pump_Nonoperational = st.checkbox("Pumps nonoperational")
+            Motor_nonOperational = st.checkbox("Motor nonoperational")
+            Motor_removal = st.checkbox("Motor removal")
+            Motor_Reinstalled = st.checkbox("Motor re-installed")
+            Well_reading = st.checkbox("Well reading")
+            Pressure_wash = st.checkbox("Pressure wash")
+            Trash = st.checkbox("Trash")
+            Water_level_increase = st.checkbox("ABOVE optimal level")
+            Water_level_decrease = st.checkbox("BELOW optimal level")
+            End = st.checkbox("Outro")
+
+            report = []
+
+                # if sump_clean:
+                # report.append("The sump basin was cleaned and cleared of accumulated debris to ensure proper pump operation.")
+
+            if Starter:
+                report.append("Today we perform routine maintenance and assessment on the community pond.")
+            if Mow:
+                report.append(
+                        "The pond basin and surrounding areas were mowed to control vegetation growth and maintain site appearance.")
+            if Fountain_Inspection:
+                report.append(
+                        "An inspection of the fountain units, timers, lighting components, and GFCI systems was conducted to assess current conditions and identify any maintenance needs.")
+            if Fountain_Operational:
+                report.append(
+                        "After completing our inspection, we were able to confirm that all fountain equipment is fully operational as intended.")
+            if Fountain_Removal:
+                report.append(
+                        "Unfortunately, the fountain was found to be non-operational. The unit was removed from the pond for further evaluation and maintenance.")
+            if Fountain_NonOperational:
+                report.append(
+                        "Unfortunately, the fountain was found to be non-operational. Further maintenance is required to restore proper function.")
+            if Fountain_Reinstalled:
+                report.append(
+                        "The fountain was successfully re-installed in the pond and placed back into operation. The system was tested and found to be operating properly at the time of service.")
+            if Fountain_Timers:
+                report.append("The fountain timers were found to be non-operational at the time of service.")
+            if Fountain_lights:
+                report.append(
+                        "One of the fountain lights were replaced and tested to ensure proper illumination and operation.")
+            if Fountain_Lens:
+                report.append(
+                        "The fountain light lens was replaced and the lighting system was tested to ensure porper operation.")
+            if Pump_Operational:
+                report.append(
+                        "All water feature pumps were tested and confirmed to be operating as intended at the time of service.")
+            if Pump_Nonoperational:
+                report.append(
+                        "Pump # found to be non-operational at the time of service, and further maintenance will be required to restore proper function.")
+            if Chemical:
+                report.append(
+                        "Treatment was performed for -plant species- growth observed forming throughout the pond.")
+            if Motor_nonOperational:
+                report.append(
+                        "The pump motor was inspected and fount to be non-operational. Further evaluation and maintenance will be required.")
+            if Motor_removal:
+                report.append(
+                        "The pump motor was found to be non-operational and was removed from site for further inspection.")
+            if Motor_Reinstalled:
+                report.append(
+                        "The pump motor was successfully re-installed and placed back into operation. The unit was tested and found to be operating properly at the time of service.")
+            if Pressure_wash:
+                report.append(
+                        "The waterfall features were pressure washed to remove accumulated debris and improve overall appearance.")
+            if Well_reading:
+                report.append("The well reading was inspected at -time-, with a measurement of ###.")
+            if Water_level_increase:
+                report.append(
+                        "The water level was observed to be about [X] inches above the optimal level at the time of service.")
+            if Water_level_decrease:
+                report.append(
+                        "The water level was observed to be about [X] inches below the optimal level at the time of service.")
+            if Trash:
+                report.append(
+                        "Lastly, before we conclude this visit, all visible trash/debris were collected and properly disposed of to maintain a clean and accessible site.")
             if End:
                 report.append("The area was left in good conditions at the time of departure.")
 
